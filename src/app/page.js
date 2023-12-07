@@ -11,8 +11,8 @@ function ParentField( visibleYakuField, setVisibleYakuField,
                       visibleFuField, setVisibleFuField,
                       visibleResultField, setVisibleResultField ){
 
-  const [menzenFuuro, setMenzenFuuro] = useState('menzen');
   const [oyaKo, setOyaKo] = useState('oya');
+  const [menzenFuuro, setMenzenFuuro] = useState('menzen');
   const [tsumoRon, setTsumoRon] = useState('tsumo');
   const [han, setHan] = useState(0);
   const [fu, setFu] = useState(0);
