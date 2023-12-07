@@ -26,7 +26,7 @@ function ParentField( visibleYakuField, setVisibleYakuField,
 
   return (
     <div>
-      <YakuField />
+      {/* <YakuField /> */}
       <FuField />
       <ResultField />
     </div>
