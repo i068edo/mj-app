@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 
+import AppBar from './AppBar';
 import YakuField from './YakuField';
 import FuField from './FuField';
 import ResultField from './ResultField';
@@ -41,6 +42,8 @@ export default function Home() {
   
   return (
     <main className="body">
+      <AppBar />
+      
       <ParentField 
         visibleYakuField={{visibleYakuField}} 
         setVisibleYakuField={{setVisibleYakuField}}
