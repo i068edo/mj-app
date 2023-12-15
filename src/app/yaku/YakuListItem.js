@@ -17,31 +17,17 @@ export default function YakuListItem( props ) {
     const { key, yaku, hanCount, han, setHan, yakuList, setYakuList } = props;
     const [checked, setChecked] = useState(false);
     const kuisagariYakuList = [
-        "混全帯么九（チャンタ） 食い下がり一飜",
-        "一気通貫（イッツー） 食い下がり一飜",
-        "三色同順（サンショクドウジュン）食い下がり一飜",
-        "純全帯么九（ジュンチャン）食い下がり一飜",
-        "混一色（ホンイツ） 食い下がり一飜",
-        "清一色（チンイツ） 食い下がり一飜"
+        "混全帯么九（チャンタ） 食い下がり一飜　",
+        "一気通貫（イッツー） 食い下がり一飜　",
+        "三色同順（サンショクドウジュン）食い下がり一飜　",
+        "純全帯么九（ジュンチャン）食い下がり一飜　",
+        "混一色（ホンイツ） 食い下がり一飜　",
+        "清一色（チンイツ） 食い下がり一飜　"
     ];
     const isKuisagari = kuisagariYakuList.includes(yaku);
 
     const handleChange = (event) => {
-        console.log(isKuisagari);
         setChecked(event.target.checked);
-        /* if(checked){
-            setHan(han - hanCount);
-            removeYakuListItem();
-            if(isKuisagari){
-                setHan(han + 1);
-            }
-        }else{
-            setHan(han + hanCount);      
-            setYakuList([...yakuList, yaku]);
-            if(isKuisagari){
-                setHan(han - 1);
-            }
-        } */
         if(isKuisagari){
             if(checked){
                 setHan(han - hanCount+1);

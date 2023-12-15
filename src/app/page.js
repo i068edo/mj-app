@@ -11,9 +11,9 @@ function ParentField( visibleYakuField, setVisibleYakuField,
                       visibleFuField, setVisibleFuField,
                       visibleResultField, setVisibleResultField ){
 
-  const [oyaKo, setOyaKo] = useState('oya');
-  const [menzenFuuro, setMenzenFuuro] = useState('menzen');
-  const [tsumoRon, setTsumoRon] = useState('tsumo');
+  const [oyaKo, setOyaKo] = useState('');
+  const [menzenFuuro, setMenzenFuuro] = useState('');
+  const [tsumoRon, setTsumoRon] = useState('');
   const [han, setHan] = useState(0);
   const [fu, setFu] = useState(0);
   const [honba, setHonba] = useState(0);
@@ -27,17 +27,17 @@ function ParentField( visibleYakuField, setVisibleYakuField,
                         "白（ハク）", "發（ハツ）", "中（チュン）",
                         "平和（ピンフ）", "一盃口（イーペーコー）",
                         "槍槓（チャンカン）", "嶺上開花（リンシャン）",
-                        "海底摸月(ハイテイ)", "河底撈魚（ホウテイ）",
+                        "海底摸月（ハイテイ）", "河底撈魚（ホウテイ）",
                         "一発（イッパツ）"];
   const yakuNameList2 = ["ダブル立直（ダブルリーチ）", "三色同刻（サンショクドーコー）",
                         "三槓子（サンカンツ）", "対々和（トイトイ）", "三暗刻（サンアンコー）", 
                         "小三元（ショーサンゲン）", "混老頭（ホンロートー）", "七対和（チートイ）", 
-                        "混全帯么九（チャンタ）", "混全帯么九（チャンタ） 食い下がり一飜", 
-                        "一気通貫（イッツー）", "一気通貫（イッツー） 食い下がり一飜", 
-                        "三色同順（サンショクドウジュン）", "三色同順（サンショクドウジュン）食い下がり一飜"];
-  const yakuNameList3 = ["二盃口（リャンペーコー）", "純全帯么九（ジュンチャン）", "純全帯么九（ジュンチャン）食い下がり一飜",
-                        "混一色（ホンイツ）", "混一色（ホンイツ） 食い下がり一飜"];                
-  const yakuNameList6 = ["清一色（チンイツ）", "清一色（チンイツ） 食い下がり一飜"];
+                        "混全帯么九（チャンタ）", "混全帯么九（チャンタ） 食い下がり一飜　", 
+                        "一気通貫（イッツー）", "一気通貫（イッツー） 食い下がり一飜　", 
+                        "三色同順（サンショクドウジュン）", "三色同順（サンショクドウジュン）食い下がり一飜　"];
+  const yakuNameList3 = ["二盃口（リャンペーコー）", "純全帯么九（ジュンチャン）", "純全帯么九（ジュンチャン）食い下がり一飜　",
+                        "混一色（ホンイツ）", "混一色（ホンイツ） 食い下がり一飜　"];                
+  const yakuNameList6 = ["清一色（チンイツ）", "清一色（チンイツ） 食い下がり一飜　"];
   const yakumanNameList = ["天和（テンホー）", "地和（チーホー）", 
                           "大三元（ダイサンゲン）", "四暗刻（スーアンコウ）", "字一色（ツーイーソー）",
                           "緑一色（リューイーソー）", "清老頭（チンロートー）", "国士無双（コクシムソウ）",
@@ -47,11 +47,17 @@ function ParentField( visibleYakuField, setVisibleYakuField,
 
   return (
     <div>
-      <YakuField {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
+      <YakuField {...{ oyaKo: oyaKo, setOyaKo: setOyaKo, menzenFuuro: menzenFuuro, setMenzenFuuro, setMenzenFuuro,
+                  tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
                   yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
-                  yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2 }}/> 
-      {/* <FuField />
-      <ResultField /> */}
+                  yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
+                  totalPoint: totalPoint, setTotalPoint: setTotalPoint }}/> 
+      {/* <FuField /> */}
+      <ResultField  {...{ oyaKo: oyaKo, setOyaKo: setOyaKo, menzenFuuro: menzenFuuro, setMenzenFuuro, setMenzenFuuro,
+                  tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
+                  yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
+                  yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
+                  totalPoint: totalPoint, setTotalPoint: setTotalPoint }}/>
     </div>
   )
   

@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography';
 
 
 export default function YakuList(props) {
-  const { han,  setHan, yakuList, setYakuList, yakuNameList1,
+  const { han, setHan, yakuList, setYakuList, yakuNameList1,
     yakuNameList2, yakuNameList3, yakuNameList6,
      yakumanNameList, yakumanNameList2 } = props;
 
@@ -86,7 +86,6 @@ export default function YakuList(props) {
  */}
        
 
-        <Button variant="contained" sx={{ mt: 1, mb: 3 }}>送信する</Button>
     </div>
   );
 }
