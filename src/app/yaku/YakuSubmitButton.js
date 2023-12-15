@@ -3,12 +3,17 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 
 export default function YakuSubmitButton( props ){
-    const { oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro, tsumoRon, setTsumoRon,
+    const { visibleYakuField, setVisibleYakuField, visibleFuField, setVisibleFuField,
+        visibleResultField, setVisibleResultField, oyaKo, setOyaKo, menzenFuuro, 
+        setMenzenFuuro, tsumoRon, setTsumoRon,
         han, setHan, yakuList, setYakuList, yakuNameList1,
-         yakuNameList2, yakuNameList3, yakuNameList6,
-          yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint } = props;
+        yakuNameList2, yakuNameList3, yakuNameList6,
+        yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint } = props;
 
     function yakuSubmitClick(){
+        console.log(visibleYakuField);
+        setVisibleYakuField(false);
+        setVisibleResultField(true);
         if( oyaKo == '親' ){
             calculateOver4hanOya();
         }else if( oyaKo == '子' ){

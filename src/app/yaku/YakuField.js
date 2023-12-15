@@ -11,10 +11,12 @@ import YakuResult from './YakuResult';
 import YakuSubmitButton from './YakuSubmitButton';
 
 export default function YakuField( props ){
-    const { oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro, tsumoRon, setTsumoRon,
+    const { visibleYakuField, setVisibleYakuField, visibleFuField, setVisibleFuField,
+            visibleResultField, setVisibleResultField,
+            oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro, tsumoRon, setTsumoRon,
             han, setHan, yakuList, setYakuList, yakuNameList1,
-             yakuNameList2, yakuNameList3, yakuNameList6,
-              yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint } = props;
+            yakuNameList2, yakuNameList3, yakuNameList6,
+            yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint } = props;
     
     return(
         <Box sx={{mt:1, ml:1}}>
@@ -24,7 +26,9 @@ export default function YakuField( props ){
                 <TsumoRonRadioGroup {...{ tsumoRon: tsumoRon, setTsumoRon: setTsumoRon }}/>
             </Stack>
             
-            <YakuSubmitButton  {...{ oyaKo: oyaKo, setOyaKo: setOyaKo, menzenFuuro: menzenFuuro, setMenzenFuuro, setMenzenFuuro,
+            <YakuSubmitButton  {...{ visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,
+                  visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
+                  setVisibleResultField: setVisibleResultField, oyaKo: oyaKo, setOyaKo: setOyaKo, menzenFuuro: menzenFuuro, setMenzenFuuro, setMenzenFuuro,
                   tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
                   yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
                   yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
