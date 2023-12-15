@@ -29,7 +29,7 @@ export default function YakuList(props) {
           <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakuNameList1.map((yaku, index) => (
-              <YakuListItem key={index} yaku={yaku}
+              <YakuListItem key={index} yaku={yaku} hanCount={1}
                 {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
             ))}
           </Grid>
@@ -42,7 +42,7 @@ export default function YakuList(props) {
           <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakuNameList2.map((yaku, index) => (
-              <YakuListItem key={index} yaku={yaku}
+              <YakuListItem key={index} yaku={yaku} hanCount={2}
                 {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
             ))}
           </Grid>
@@ -55,7 +55,20 @@ export default function YakuList(props) {
           <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakuNameList3.map((yaku, index) => (
-              <YakuListItem key={index} yaku={yaku}
+              <YakuListItem key={index} yaku={yaku} hanCount={3}
+                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
+            ))}
+          </Grid>
+        </nav>
+      </Box>
+
+      <Box sx={{ flexGrow: 1 }}>
+        <nav aria-label="六飜">
+          <Typography gutterBottom variant="h5" component="div">六飜役</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Grid container spacing={2}>
+            {yakuNameList6.map((yaku, index) => (
+              <YakuListItem key={index} yaku={yaku} hanCount={6}
                 {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
             ))}
           </Grid>

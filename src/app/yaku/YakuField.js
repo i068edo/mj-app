@@ -21,6 +21,9 @@ export default function YakuField( props ){
                 <TsumoRonRadioGroup />
             </Stack>
 
+            <div>{han}</div>
+            <div>{yakuList}</div>
+
             <YakuList {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
                      yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
                      yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2 }} />

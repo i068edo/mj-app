@@ -35,7 +35,7 @@ function ParentField( visibleYakuField, setVisibleYakuField,
                         "混全帯么九（チャンタ）", "混全帯么九（チャンタ） 食い下がり一飜", 
                         "一気通貫（イッツー）", "一気通貫（イッツー） 食い下がり一飜", 
                         "三色同順（サンショクドウジュン）", "三色同順（サンショクドウジュン）食い下がり一飜"];
-  const yakuNameList3 = ["二盃口（リャンペーコー）", "純全帯么九（ジュンチャン）", "純全帯么九（ジュンチャン）食い下がり一飜 ",
+  const yakuNameList3 = ["二盃口（リャンペーコー）", "純全帯么九（ジュンチャン）", "純全帯么九（ジュンチャン）食い下がり一飜",
                         "混一色（ホンイツ）", "混一色（ホンイツ） 食い下がり一飜"];                
   const yakuNameList6 = ["清一色（チンイツ）", "清一色（チンイツ） 食い下がり一飜"];
   const yakumanNameList = ["天和（テンホー）", "地和（チーホー）", 
@@ -47,12 +47,11 @@ function ParentField( visibleYakuField, setVisibleYakuField,
 
   return (
     <div>
-      <div>{han}</div>
       <YakuField {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
                   yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
                   yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2 }}/> 
-      <FuField />
-      <ResultField />
+      {/* <FuField />
+      <ResultField /> */}
     </div>
   )
   
