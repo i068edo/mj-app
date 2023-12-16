@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import QuestionMarkRoundedIcon from '@mui/icons-material/QuestionMarkRounded';
-import {  } from '@mui/material/colors';
+import { yellow } from '@mui/material/colors';
 
 export default function ButtonAppBar() {
   return (
@@ -23,7 +23,7 @@ export default function ButtonAppBar() {
           </Typography>
 
           <IconButton >
-            < QuestionMarkRoundedIcon fontSize="large"  color='transparent' />
+            < QuestionMarkRoundedIcon fontSize="large"  sx={{color: yellow[500]}} />
           </IconButton>
 
         </Toolbar>
