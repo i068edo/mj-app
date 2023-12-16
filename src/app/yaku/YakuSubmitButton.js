@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 export default function YakuSubmitButton( props ){
     const { visibleYakuField, setVisibleYakuField, visibleFuField, setVisibleFuField,
@@ -52,7 +53,9 @@ export default function YakuSubmitButton( props ){
 
     return(
         <div>
-            <Button variant='contained' sx={{ mt: 1, mb: 3 }} onClick={yakuSubmitClick}>送信する</Button>
+            <Button variant='contained' sx={{ mt: 1, mb: 3 }} onClick={yakuSubmitClick}>
+                <span>送信する</span><TelegramIcon />
+            </Button>
         </div>
     )
 }

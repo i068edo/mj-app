@@ -30,7 +30,7 @@ export default function YakuResult( props ) {
                 {yakuList}
             </Box>
             <Box sx={{
-                minWidth: 65,
+                minWidth: 75,
                 maxHeight: 50,
                 backgroundColor: grey[200],
                 border: 5,
@@ -38,6 +38,7 @@ export default function YakuResult( props ) {
                 borderColor: teal[300],
                 p: 2,
                 display: 'flex',
+                justifyContent: 'end',
                 fontSize: '32px'
             }}>
                 {han}飜
