@@ -10,8 +10,9 @@ export default function ResultField(props) {
         yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint } = props;
 
     function backButtonClick() {
-        setVisibleYakuField(true);
-        setVisibleResultField(false);
+        /* setVisibleYakuField(true);
+        setVisibleResultField(false); */
+        window.location.reload();
     }
 
     return (

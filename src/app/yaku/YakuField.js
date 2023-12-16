@@ -9,6 +9,7 @@ import { TsumoRonRadioGroup } from './Radio';
 import YakuList from './YakuList';
 import YakuResult from './YakuResult';
 import YakuSubmitButton from './YakuSubmitButton';
+import DoraCount from './DoraCount';
 
 export default function YakuField( props ){
     const { visibleYakuField, setVisibleYakuField, visibleFuField, setVisibleFuField,
@@ -16,7 +17,7 @@ export default function YakuField( props ){
             oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro, tsumoRon, setTsumoRon,
             han, setHan, yakuList, setYakuList, yakuNameList1,
             yakuNameList2, yakuNameList3, yakuNameList6,
-            yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint } = props;
+            yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora, setDora } = props;
     
     return(
         <Box sx={{mt:1, ml:1}}>
@@ -24,6 +25,8 @@ export default function YakuField( props ){
                 <OyaKoRadioGroup {...{ oyaKo: oyaKo, setOyaKo: setOyaKo }}/>
                 <MenzenFuuroRadioGroup {...{ menzenFuuro: menzenFuuro, setMenzenFuuro: setMenzenFuuro }}/>
                 <TsumoRonRadioGroup {...{ tsumoRon: tsumoRon, setTsumoRon: setTsumoRon }}/>
+                <DoraCount {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
+                    dora: dora, setDora: setDora }}/>
             </Stack>
             
             <YakuSubmitButton  {...{ visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,
@@ -32,7 +35,7 @@ export default function YakuField( props ){
                   tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
                   yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
                   yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
-                  totalPoint: totalPoint, setTotalPoint: setTotalPoint }}/>
+                  totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora:dora }}/>
 
             <YakuList {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
                      yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,

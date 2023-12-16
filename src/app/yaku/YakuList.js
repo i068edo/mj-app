@@ -75,17 +75,6 @@ export default function YakuList(props) {
         </nav>
       </Box>
 
-      
-
-{/*           <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="ドラ" />
-              <TextField id="ドラの数" label="ドラの数" type="number" variant="standard" />
-            </ListItemButton>
-          </ListItem>
- */}
-       
-
     </div>
   );
 }

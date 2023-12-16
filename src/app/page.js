@@ -18,6 +18,7 @@ function ParentField(props) {
   const [tsumoRon, setTsumoRon] = useState('');
   const [han, setHan] = useState(0);
   const [fu, setFu] = useState(0);
+  const [dora, setDora] = useState(0);
   const [honba, setHonba] = useState(0);
   const [totalPoint, setTotalPoint] = useState(0);
   const [isYakuman, setIsYakuman] = useState(false);
@@ -57,7 +58,7 @@ function ParentField(props) {
           tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
           yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
           yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
-          totalPoint: totalPoint, setTotalPoint: setTotalPoint
+          totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora
         }} />
       }
       {/* <FuField /> */}

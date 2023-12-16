@@ -9,12 +9,16 @@ export default function YakuSubmitButton( props ){
         setMenzenFuuro, tsumoRon, setTsumoRon,
         han, setHan, yakuList, setYakuList, yakuNameList1,
         yakuNameList2, yakuNameList3, yakuNameList6,
-        yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint } = props;
+        yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora } = props;
 
     function yakuSubmitClick(){
         console.log(visibleYakuField);
         setVisibleYakuField(false);
         setVisibleResultField(true);
+
+        setHan(han+dora);
+        console.log(han+dora);
+
         if( oyaKo == '親' ){
             calculateOver4hanOya();
         }else if( oyaKo == '子' ){
@@ -24,7 +28,7 @@ export default function YakuSubmitButton( props ){
     }
 
     function calculateOver4hanOya(){
-        if(han == 4){
+        if(han <= 5){
             setTotalPoint(12000);
         }else if(han <= 7){
             setTotalPoint(18000);
@@ -38,7 +42,7 @@ export default function YakuSubmitButton( props ){
     }
 
     function calculateOver4hanKo(){
-        if(han == 4){
+        if(han <= 5){
             setTotalPoint(8000);
         }else if(han <= 7){
             setTotalPoint(12000);
