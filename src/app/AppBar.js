@@ -6,25 +6,26 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import QuestionMarkRoundedIcon from '@mui/icons-material/QuestionMarkRounded';
+import { yellow } from '@mui/material/colors';
 
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1 , mb:10}} >
+      <AppBar position='fixed' color='info' enableColorOnDark >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+    
+
+
+
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             麻雀得点計算webアプリケーション
           </Typography>
-          <Button color="inherit">Login</Button>
+
+          <IconButton >
+            < QuestionMarkRoundedIcon fontSize="large"  sx={{color: yellow[500]}} />
+          </IconButton>
+
         </Toolbar>
       </AppBar>
     </Box>
