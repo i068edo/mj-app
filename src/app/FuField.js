@@ -13,6 +13,11 @@ import MachiSelect from './MachiSelect';
 import FuResult from './FuResult';
 
 export default function FuField() {
+
+    const [fu, setFu] = useState(0);
+
+    const handleUpdate = e  => setFu(e.target.value) 
+
     return (
         <Box sx={{ mt: 3, mb: 3, ml: 1 }} >
             符計算
@@ -27,13 +32,14 @@ export default function FuField() {
                     <FormLabel>雀頭</FormLabel>
                     <JantoSelect />
                     <FormLabel>待ちの形</FormLabel>
-                    <MachiSelect />
+                    <MachiSelect onUpdate={handleUpdate}/>
 
 
                 </FormControl>
             </Box>
 
             <FuResult />
+            {fu}
         </Box>
     )
 }

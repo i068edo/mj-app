@@ -3,11 +3,13 @@ import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
-export default function MachiSelect() {
+export default function MachiSelect({ onUpdate }) {
+    
+    var age;
     return (
         <Select
-            /* value={age} */
-            /* onChange={handleChange} */
+            value={age}
+            onChange={() => onUpdate(age)}
             displayEmpty
             sx={{ mb: 3 }}
         >
