@@ -13,32 +13,45 @@ export default function DoraCount(props) {
     setDora(event.target.value);
   }
 
-  function doraConfirm(){
+  function confirmDora(){
     setHan(han + Number(dora));
     const doraName = 'ドラ ' + dora;      
     setYakuList([...yakuList, doraName]);
   }
 
-  return (
-    <Box sx={{ mt: 1 }}>
+  function deleteDora(){
+    if( yakuList.some(item => item.includes('ドラ')) ){
+      const yakuWithDora = yakuList.filter(item => item.includes('ドラ'));
+      const yakuWithDoraArray = (String(yakuWithDora)).split(' ');
+      const yakuWithDoraNumber = Number(yakuWithDoraArray[1]);
+      setHan(han - yakuWithDoraNumber);
+      const filteredYakuList = yakuList.filter(item => !item.includes('ドラ'));
+      setYakuList(filteredYakuList);
+    }
+  }
 
-      {/* <Typography gutterBottom variant="body1" 
-                  sx={{mt:1, mb:1}}
-                  color='secondary' >ドラの数は右下の飜数に加算されません。</Typography> */}
-              
+
+
+  return (
+    <Box sx={{ mt: 1 }} display='flex' flexDirection='row' alignItems='flex-start'>
       <TextField id="ドラの数"
                  label="ドラの数"
                  type="number"
-                 variant="filled"
+                 variant="outlined"
                  color="secondary" 
                  value={dora}
                  onChange={updateDora}
-                 sx={{ mb:1, width: 130 }}
+                 sx={{ width: 100, m:1 }}
                  
                  
     />
 
-    <div><Button variant="outlined"  onClick={doraConfirm} color="secondary">ドラの数を確定</Button></div>
+    <Box display='flex' flexDirection='column'>
+      <Button variant="outlined"  onClick={confirmDora} color="secondary" sx={{m:1}}>ドラの数を確定</Button>
+      <Button variant="outlined"  onClick={deleteDora} color="secondary" sx={{m:1}}>ドラの数を削除</Button>
+    
+    </Box>
+    
     
 
     </Box>
