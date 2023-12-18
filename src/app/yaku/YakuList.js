@@ -19,7 +19,7 @@ export default function YakuList(props) {
   const { han, setHan, yakuList, setYakuList, yakuNameList1,
     yakuNameList2, yakuNameList3, yakuNameList6,
     yakumanNameList, yakumanNameList2,
-    yakuman, setYakuman } = props;
+    yakuman, setYakuman, isPinfu, setIsPinfu , isChiitoitsu, setIsChiitoitsu} = props;
 
 
   return (
@@ -31,7 +31,7 @@ export default function YakuList(props) {
           <Grid container spacing={2}>
             {yakuNameList1.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={1}
-                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
+                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, isPinfu: isPinfu, setIsPinfu: setIsPinfu }} />
             ))}
           </Grid>
         </nav>
@@ -44,7 +44,7 @@ export default function YakuList(props) {
           <Grid container spacing={2}>
             {yakuNameList2.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={2}
-                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
+                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, isChiitoitsu: isChiitoitsu, setIsChiitoitsu: setIsChiitoitsu }} />
             ))}
           </Grid>
         </nav>
@@ -75,7 +75,7 @@ export default function YakuList(props) {
           </Grid>
         </nav>
       </Box>
-
+ 
       <Box sx={{ flexGrow: 1 }}>
         <nav aria-label="役満">
           <Typography gutterBottom variant="h5" component="div">役満</Typography>
