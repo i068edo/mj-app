@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { teal ,grey } from '@mui/material/colors';
 
 export default function YakuResult( props ) {
-    const { han, yakuList } = props;
+    const { han, yakuman, yakuList } = props;
     
 
     return (
@@ -28,6 +28,19 @@ export default function YakuResult( props ) {
                 overflow: 'scroll' 
             }}>
                 {yakuList}
+            </Box>
+            <Box sx={{
+                minWidth: 75,
+                maxHeight: 50,
+                backgroundColor: grey[200],
+                border: 5,
+                borderRadius: 6,
+                borderColor: teal[300],
+                p: 2,
+                display: 'flex',
+                fontSize: '32px'
+            }}>
+                {yakuman}倍役満   
             </Box>
             <Box sx={{
                 minWidth: 75,

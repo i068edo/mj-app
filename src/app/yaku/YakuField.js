@@ -17,7 +17,8 @@ export default function YakuField( props ){
             oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro, tsumoRon, setTsumoRon,
             han, setHan, yakuList, setYakuList, yakuNameList1,
             yakuNameList2, yakuNameList3, yakuNameList6,
-            yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora, setDora } = props;
+            yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora, setDora,
+            yakuman, setYakuman, isPinfu, setIsPinfu, isChiitoitsu, setIsChiitoitsu} = props;
     
     return(
         <Box sx={{mt:1, ml:1}}>
@@ -26,8 +27,8 @@ export default function YakuField( props ){
                 <MenzenFuuroRadioGroup {...{ menzenFuuro: menzenFuuro, setMenzenFuuro: setMenzenFuuro }}/>
                 <TsumoRonRadioGroup {...{ tsumoRon: tsumoRon, setTsumoRon: setTsumoRon }}/>
                 <DoraCount {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
-                    dora: dora, setDora: setDora }}/>
-            </Stack>
+                    dora: dora, setDora: setDora, }}/>
+            </Stack> 
             
             <YakuSubmitButton  {...{ visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,
                   visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
@@ -35,13 +36,16 @@ export default function YakuField( props ){
                   tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
                   yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
                   yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
-                  totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora:dora }}/>
+                  totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora:dora,yakuman: yakuman,setYakuman: setYakuman,
+                  isPinfu: isPinfu, isChiitoitsu: isChiitoitsu }}/>
 
             <YakuList {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
                      yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
-                     yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2 }} />
+                     yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
+                     yakuman: yakuman, setYakuman: setYakuman, isPinfu: isPinfu, setIsPinfu: setIsPinfu,isChiitoitsu: isChiitoitsu,
+                     setIsChiitoitsu: setIsChiitoitsu }} />
 
-            <YakuResult  {...{ han: han, yakuList: yakuList }}/>
+            <YakuResult  {...{ han: han, yakuman: yakuman, yakuList: yakuList }}/>
         </Box>
     )
 }

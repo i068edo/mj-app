@@ -9,7 +9,8 @@ export default function YakuSubmitButton( props ){
         setMenzenFuuro, tsumoRon, setTsumoRon,
         han, setHan, yakuList, setYakuList, yakuNameList1,
         yakuNameList2, yakuNameList3, yakuNameList6,
-        yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora } = props;
+        yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora,
+        yakuman, setYakuman, isChiitoitsu, isPinfu,} = props;
 
     function yakuSubmitClick(){
         console.log(visibleYakuField);
@@ -17,11 +18,29 @@ export default function YakuSubmitButton( props ){
         setVisibleResultField(true);
 
         setHan(han+dora);
-        console.log(han+dora);
+        console.log(isPinfu);
 
-        if( oyaKo == '親' ){
-            calculateOver4hanOya();
-        }else if( oyaKo == '子' ){
+        if( (oyaKo == '親') && (yakuman >= 1) ){
+            calculateYakumanOya();
+        }else if( (oyaKo == '子') && (yakuman >= 1) ){
+            calculateYakumanKo();
+        }else if( (oyaKo == '親') && (isChiitoitsu) && (han <= 4) ){
+            calculateChiitoitsuOya();
+        }else if( (oyaKo == '子') && (isChiitoitsu) && (han <= 4) ){
+            calculateChiitoitsuKo();
+        }else if( (oyaKo == '親') && (isPinfu) && (han <= 4) && (tsumoRon == 'ツモ')){
+            calculatePinfuTsumoOya();
+        }else if( (oyaKo == '親') && (isPinfu) && (han <= 4) && (tsumoRon == 'ロン')){
+            calculatePinfuRonOya();
+        }else if( (oyaKo == '子') && (isPinfu) && (han <= 4) && (tsumoRon == 'ツモ')){
+            calculatePinfuTsumoKo();
+        }else if( (oyaKo == '子') && (isPinfu) && (han <= 4) && (tsumoRon == 'ロン')){
+            calculatePinfuRonKo();
+        }
+        else if( oyaKo == '親'){
+            calculateOver4hanOya(); 
+        }
+        else if( oyaKo == '子' ){
             calculateOver4hanKo();
         }
         
@@ -54,6 +73,107 @@ export default function YakuSubmitButton( props ){
             setTotalPoint(32000);
         }
     }
+    
+    function calculateYakumanOya(){
+        if(yakuman == 1){
+            setTotalPoint(48000);
+        }else if(yakuman == 2){
+            setTotalPoint(96000);
+        }else if(yakuman == 3){
+            setTotalPoint(144000);
+        }else if(yakuman == 4){
+            setTotalPoint(192000);
+        }else if(yakuman == 5){
+            setTotalPoint(240000);
+        }else if(yakuman == 6){
+            setTotalPoint(288000);
+        }else if(yakuman >= 7){
+            setTotalPoint(336000);
+        }
+    }
+
+    function calculateYakumanKo(){
+        if(yakuman == 1){
+            setTotalPoint(32000);
+        }else if(yakuman == 2){
+            setTotalPoint(64000);
+        }else if(yakuman == 3){
+            setTotalPoint(96000);
+        }else if(yakuman == 4){
+            setTotalPoint(128000);
+        }else if(yakuman == 5){
+            setTotalPoint(160000);
+        }else if(yakuman == 6){
+            setTotalPoint(192000);
+        }else if(yakuman >= 7){
+            setTotalPoint(224000);
+        }
+    }
+
+    function calculateChiitoitsuOya(){
+        if(han == 2){
+            setTotalPoint(2400);
+        }else if(han == 3){
+            setTotalPoint(4800);
+        }else if(han == 4){
+            setTotalPoint(9600);
+        }
+    }
+
+    function calculateChiitoitsuKo(){
+        if(han == 2){
+            setTotalPoint(1600);
+        }else if(han == 3){
+            setTotalPoint(3200);
+        }else if(han == 4){
+            setTotalPoint(6400);
+        }
+    }
+
+    function calculatePinfuTsumoOya(){
+        if(han == 2){
+            setTotalPoint(2100);
+        }else if(han == 3){
+            setTotalPoint(3900);
+        }else if(han == 4){
+            setTotalPoint(7800);
+        }
+    }
+
+    function calculatePinfuRonOya(){
+        if(han == 1){
+            setTotalPoint(1500); 
+        }else if(han == 2){
+            setTotalPoint(2900);
+        }else if(han == 3){
+            setTotalPoint(5800);
+        }else if(han == 4){
+            setTotalPoint(11600);
+        }
+    }
+
+    function calculatePinfuTsumoKo(){
+        if(han == 2){
+            setTotalPoint(1500);
+        }else if(han == 3){
+            setTotalPoint(2700);
+        }else if(han == 4){
+            setTotalPoint(5200);
+        }
+    }
+
+    function calculatePinfuRonKo(){
+        if(han == 1){
+            setTotalPoint(1000); 
+        }else if(han == 2){
+            setTotalPoint(2000);
+        }else if(han == 3){
+            setTotalPoint(3900);
+        }else if(han == 4){
+            setTotalPoint(7700);
+        }
+    }
+
 
     return(
         <div>
