@@ -25,6 +25,7 @@ function ParentField(props) {
   const [isChiitoitsu, setIsChiitoitsu] = useState(false);
   const [isPinfu, setIsPinfu] = useState(false);
   const [yakuList, setYakuList] = useState(['']);
+  const [yakuman, setYakuman] = useState(0);
   const yakuNameList1 = ["立直（リーチ）", "断么九（タンヤオ）", "門前清自摸和（ツモ）",
     "自風牌（トン・ナン・シャー・ペー）", "場風牌（トン・ナン・シャー・ペー）",
     "白（ハク）", "發（ハツ）", "中（チュン）",
@@ -58,7 +59,7 @@ function ParentField(props) {
           tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
           yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
           yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
-          totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora
+          totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora, yakuman: yakuman, setYakuman: setYakuman
         }} />
       }
       {/* <FuField /> */}
@@ -70,7 +71,7 @@ function ParentField(props) {
           tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
           yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
           yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
-          totalPoint: totalPoint, setTotalPoint: setTotalPoint
+          totalPoint: totalPoint, setTotalPoint: setTotalPoint, yakuman: yakuman,setYakuman: setYakuman,
         }} />
       }
     </div>

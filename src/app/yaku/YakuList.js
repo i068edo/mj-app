@@ -18,7 +18,8 @@ import Typography from '@mui/material/Typography';
 export default function YakuList(props) {
   const { han, setHan, yakuList, setYakuList, yakuNameList1,
     yakuNameList2, yakuNameList3, yakuNameList6,
-     yakumanNameList, yakumanNameList2 } = props;
+    yakumanNameList, yakumanNameList2,
+    yakuman, setYakuman } = props;
 
 
   return (
@@ -70,6 +71,32 @@ export default function YakuList(props) {
             {yakuNameList6.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={6}
                 {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
+            ))}
+          </Grid>
+        </nav>
+      </Box>
+
+      <Box sx={{ flexGrow: 1 }}>
+        <nav aria-label="役満">
+          <Typography gutterBottom variant="h5" component="div">役満</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Grid container spacing={2}>
+            {yakumanNameList.map((yaku, index) => (
+              <YakuListItem key={index} yaku={yaku} yakumanCount={1}
+                {...{ yakuman: yakuman, setYakuman: setYakuman, yakuList: yakuList, setYakuList: setYakuList, yakumanNameList: yakumanNameList}} />
+            ))}
+          </Grid>
+        </nav>
+      </Box>
+
+      <Box sx={{ flexGrow: 1 }}>
+        <nav aria-label="２倍役満">
+          <Typography gutterBottom variant="h5" component="div">２倍役満</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Grid container spacing={2}>
+            {yakumanNameList2.map((yaku, index) => (
+              <YakuListItem key={index} yaku={yaku} yakumanCount={2}
+                {...{ yakuman: yakuman, setYakuman: setYakuman, yakuList: yakuList, setYakuList: setYakuList }} />
             ))}
           </Grid>
         </nav>
