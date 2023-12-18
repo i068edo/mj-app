@@ -14,8 +14,10 @@ import Grid from '@mui/material/Grid';
 import { CenterFocusStrong } from '@mui/icons-material';
 
 export default function YakuListItem( props ) {
-    const { key, yaku, hanCount, han, setHan, yakuList, setYakuList, yakuman,yakumanCount, setYakuman} = props;
+    const { key, yaku, hanCount, han, setHan, yakuList, setYakuList, yakuman,yakumanCount, setYakuman,
+    isPinfu, setIsPinfu,isChiitoitsu,setIsChiitoitsu} = props;
     const [checked, setChecked] = useState(false);
+
     const kuisagariYakuList = [
         "混全帯么九（チャンタ） 食い下がり一飜　",
         "一気通貫（イッツー） 食い下がり一飜　",
@@ -35,7 +37,8 @@ export default function YakuListItem( props ) {
     
     const isKuisagari = kuisagariYakuList.includes(yaku);
     const isYakuman = oneYakumanNameList.includes(yaku);
-    const isTwoYakuman = twoYakumanNameList.includes(yaku); 
+    const isTwoYakuman = twoYakumanNameList.includes(yaku);
+
 
     const handleChange = (event) => {
         setChecked(event.target.checked);
@@ -61,6 +64,26 @@ export default function YakuListItem( props ) {
                 removeYakuListItem();
             }else{
                 setYakuman(yakuman + yakumanCount);      
+                setYakuList([...yakuList, yaku]);
+            }
+        }else if(yaku=="七対和（チートイ）"){
+            if(checked){
+                setIsChiitoitsu(false);
+                setHan(han - hanCount);
+                removeYakuListItem();
+            }else{
+                setIsChiitoitsu(true);
+                setHan(han + hanCount);
+                setYakuList([...yakuList, yaku]);
+            }
+        }else if(yaku==="平和（ピンフ）"){
+            if(checked){
+                setIsPinfu(false);
+                setHan(han - hanCount);
+                removeYakuListItem();
+            }else{
+                setIsPinfu(true);
+                setHan(han + hanCount);
                 setYakuList([...yakuList, yaku]);
             }
         }else{
