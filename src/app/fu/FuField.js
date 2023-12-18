@@ -11,10 +11,11 @@ import MentsuSelect from './MentsuSelect';
 import JantoSelect from './JantoSelect';
 import MachiSelect from './MachiSelect';
 import FuResult from './FuResult';
+import FuSubmitButton from './FuSubmitButton'
 
 export default function FuField( props ) {
 
-    const {fu, setFu} = props;
+    const {fu, setFu, han, tsumoRon, setTotalPoint} = props;
     
     return (
         <Box sx={{ mt: 3, mb: 3, ml: 1 }} >
@@ -37,6 +38,7 @@ export default function FuField( props ) {
             </Box>
 
             <FuResult {...{fu: fu, setFu: setFu}}/>
+            <FuSubmitButton {...{fu: fu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint}}/>
         </Box>
     )
 }

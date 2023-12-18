@@ -62,7 +62,7 @@ function ParentField(props) {
         }} />
       }
       { <FuField {...{ 
-        fu: fu, setFu: setFu, han: han
+        fu: fu, setFu: setFu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint
       }}/> }
       {visibleResultField &&
         <ResultField  {...{

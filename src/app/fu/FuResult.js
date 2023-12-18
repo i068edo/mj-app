@@ -2,10 +2,6 @@ import * as React from 'react';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 
-import MentsuSelect from './MentsuSelect';
-import JantoSelect from './JantoSelect';
-import MachiSelect from './MachiSelect';
-
 export default function FuResult( props ){
     const {fu, setFu} = props;
 
