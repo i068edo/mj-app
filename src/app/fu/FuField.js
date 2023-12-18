@@ -12,12 +12,10 @@ import JantoSelect from './JantoSelect';
 import MachiSelect from './MachiSelect';
 import FuResult from './FuResult';
 
-export default function FuField() {
+export default function FuField( props ) {
 
-    const [fu, setFu] = useState(0);
-
-    const handleUpdate = e  => setFu(e.target.value) 
-
+    const {fu, setFu} = props;
+    
     return (
         <Box sx={{ mt: 3, mb: 3, ml: 1 }} >
             符計算
@@ -25,21 +23,20 @@ export default function FuField() {
             <Box sx={{ minWidth: 120, maxWidth: 300 }}>
                 <FormControl fullWidth>
                     <FormLabel>メンツ</FormLabel>
-                    <MentsuSelect />
-                    <MentsuSelect />
-                    <MentsuSelect />
-                    <MentsuSelect />
+                    <MentsuSelect {...{fu: fu, setFu: setFu}}/>
+                    <MentsuSelect {...{fu: fu, setFu: setFu}}/>
+                    <MentsuSelect {...{fu: fu, setFu: setFu}}/>
+                    <MentsuSelect {...{fu: fu, setFu: setFu}}/>
                     <FormLabel>雀頭</FormLabel>
-                    <JantoSelect />
+                    <JantoSelect {...{fu: fu, setFu: setFu}}/>
                     <FormLabel>待ちの形</FormLabel>
-                    <MachiSelect onUpdate={handleUpdate}/>
+                    <MachiSelect {...{fu: fu, setFu: setFu}} />
 
 
                 </FormControl>
             </Box>
 
-            <FuResult />
-            {fu}
+            <FuResult {...{fu: fu, setFu: setFu}}/>
         </Box>
     )
 }

@@ -6,7 +6,9 @@ import MentsuSelect from './MentsuSelect';
 import JantoSelect from './JantoSelect';
 import MachiSelect from './MachiSelect';
 
-export default function FuResult(){
+export default function FuResult( props ){
+    const {fu, setFu} = props;
+
     return(
         <>
             <Box sx={{ 
@@ -18,7 +20,7 @@ export default function FuResult(){
                 display: 'flex',
                 justifyContent: 'center'
                 }}>
-                符
+                {fu}符
             </Box>
         </>
     )

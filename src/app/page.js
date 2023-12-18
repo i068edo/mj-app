@@ -17,7 +17,7 @@ function ParentField(props) {
   const [menzenFuuro, setMenzenFuuro] = useState('');
   const [tsumoRon, setTsumoRon] = useState('');
   const [han, setHan] = useState(0);
-  const [fu, setFu] = useState(0);
+  const [fu, setFu] = useState(20);
   const [dora, setDora] = useState(0);
   const [honba, setHonba] = useState(0);
   const [totalPoint, setTotalPoint] = useState(0);
@@ -61,7 +61,9 @@ function ParentField(props) {
           totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora
         }} />
       }
-      {/* <FuField /> */}
+      { <FuField {...{ 
+        fu: fu, setFu: setFu, han: han
+      }}/> }
       {visibleResultField &&
         <ResultField  {...{
           visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,
