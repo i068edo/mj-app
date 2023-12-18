@@ -20,7 +20,7 @@ export default function DoraCount(props) {
   }
 
   return (
-    <Box sx={{ mt: 1, ml: 1 }}>
+    <Box sx={{ mt: 1 }}>
 
       {/* <Typography gutterBottom variant="body1" 
                   sx={{mt:1, mb:1}}

@@ -10,15 +10,13 @@ export default function YakuSubmitButton( props ){
         han, setHan, yakuList, setYakuList, yakuNameList1,
         yakuNameList2, yakuNameList3, yakuNameList6,
         yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora,
-        yakuman, setYakuman, isChiitoitsu, isPinfu,} = props;
+        yakuman, setYakuman, isChiitoitsu, isPinfu, setNaniman } = props;
 
     function yakuSubmitClick(){
-        console.log(visibleYakuField);
         setVisibleYakuField(false);
         setVisibleResultField(true);
-
-        setHan(han+dora);
-        console.log(isPinfu);
+/* 
+        setHan(han+dora); */
 
         if( (oyaKo == '親') && (yakuman >= 1) ){
             calculateYakumanOya();
@@ -49,64 +47,88 @@ export default function YakuSubmitButton( props ){
     function calculateOver4hanOya(){
         if(han <= 5){
             setTotalPoint(12000);
+            setNaniman('満貫');
         }else if(han <= 7){
             setTotalPoint(18000);
+            setNaniman('跳満');
         }else if(han <= 10){
             setTotalPoint(24000);
+            setNaniman('倍満');
         }else if(han <= 12){
             setTotalPoint(36000);
+            setNaniman('三倍満');
         }else if(han >= 13){
             setTotalPoint(48000);
+            setNaniman('数え役満');
         }
     }
 
     function calculateOver4hanKo(){
         if(han <= 5){
             setTotalPoint(8000);
+            setNaniman('満貫');
         }else if(han <= 7){
             setTotalPoint(12000);
+            setNaniman('跳満');
         }else if(han <= 10){
             setTotalPoint(16000);
+            setNaniman('倍満');
         }else if(han <= 12){
             setTotalPoint(24000);
+            setNaniman('三倍満');
         }else if(han >= 13){
             setTotalPoint(32000);
+            setNaniman('数え役満');
         }
     }
     
     function calculateYakumanOya(){
         if(yakuman == 1){
             setTotalPoint(48000);
+            setNaniman('役満');
         }else if(yakuman == 2){
             setTotalPoint(96000);
+            setNaniman('二倍役満');
         }else if(yakuman == 3){
             setTotalPoint(144000);
+            setNaniman('三倍役満');
         }else if(yakuman == 4){
             setTotalPoint(192000);
+            setNaniman('四倍役満');
         }else if(yakuman == 5){
             setTotalPoint(240000);
+            setNaniman('五倍役満');
         }else if(yakuman == 6){
             setTotalPoint(288000);
+            setNaniman('六倍役満');
         }else if(yakuman >= 7){
             setTotalPoint(336000);
+            setNaniman('七倍役満');
         }
     }
 
     function calculateYakumanKo(){
         if(yakuman == 1){
             setTotalPoint(32000);
+            setNaniman('役満');
         }else if(yakuman == 2){
             setTotalPoint(64000);
+            setNaniman('二倍役満');
         }else if(yakuman == 3){
             setTotalPoint(96000);
+            setNaniman('三倍役満');
         }else if(yakuman == 4){
             setTotalPoint(128000);
+            setNaniman('四倍役満');
         }else if(yakuman == 5){
             setTotalPoint(160000);
+            setNaniman('五倍役満');
         }else if(yakuman == 6){
             setTotalPoint(192000);
+            setNaniman('六倍役満');
         }else if(yakuman >= 7){
             setTotalPoint(224000);
+            setNaniman('七倍役満');
         }
     }
 

@@ -24,8 +24,9 @@ function ParentField(props) {
   const [isYakuman, setIsYakuman] = useState(false);
   const [isChiitoitsu, setIsChiitoitsu] = useState(false);
   const [isPinfu, setIsPinfu] = useState(false);
-  const [yakuList, setYakuList] = useState(['']);
+  const [yakuList, setYakuList] = useState([]);
   const [yakuman, setYakuman] = useState(0);
+  const [naniman, setNaniman] = useState('');
   const yakuNameList1 = ["立直（リーチ）", "断么九（タンヤオ）", "門前清自摸和（ツモ）",
     "自風牌（トン・ナン・シャー・ペー）", "場風牌（トン・ナン・シャー・ペー）",
     "白（ハク）", "發（ハツ）", "中（チュン）",
@@ -60,19 +61,14 @@ function ParentField(props) {
           yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
           yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
           totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora, yakuman: yakuman, setYakuman: setYakuman,
-          isPinfu: isPinfu, setIsPinfu: setIsPinfu,isChiitoitsu: isChiitoitsu, setIsChiitoitsu: setIsChiitoitsu
+          isPinfu: isPinfu, setIsPinfu: setIsPinfu,isChiitoitsu: isChiitoitsu, setIsChiitoitsu: setIsChiitoitsu, setNaniman: setNaniman
         }} />
       } 
       {/* <FuField /> */}
       {visibleResultField &&
         <ResultField  {...{
-          visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,
-          visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
-          setVisibleResultField: setVisibleResultField, oyaKo: oyaKo, setOyaKo: setOyaKo, menzenFuuro: menzenFuuro, setMenzenFuuro, setMenzenFuuro,
-          tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
-          yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
-          yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
-          totalPoint: totalPoint, setTotalPoint: setTotalPoint, yakuman: yakuman,setYakuman: setYakuman,
+          oyaKo: oyaKo, tsumoRon: tsumoRon, han: han, yakuList: yakuList, totalPoint: totalPoint, yakuman: yakuman,
+          fu: fu, naniman: naniman
         }} />
       }
     </div>
