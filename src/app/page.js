@@ -62,15 +62,12 @@ function ParentField(props) {
           totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora, yakuman: yakuman, setYakuman: setYakuman,
           isPinfu: isPinfu, setIsPinfu: setIsPinfu,isChiitoitsu: isChiitoitsu, setIsChiitoitsu: setIsChiitoitsu
         }} />
-<<<<<<< HEAD
       }
-      { <FuField {...{ 
-        fu: fu, setFu: setFu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint
+      {visibleFuField &&
+       <FuField {...{ 
+        visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
+        setVisibleResultField: setVisibleResultField, fu: fu, setFu: setFu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint, oyaKo: oyaKo
       }}/> }
-=======
-      } 
-      {/* <FuField /> */}
->>>>>>> 465ff1831a522a3adb22870b8ec10790e1f6044e
       {visibleResultField &&
         <ResultField  {...{
           visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,

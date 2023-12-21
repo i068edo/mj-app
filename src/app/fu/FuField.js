@@ -15,7 +15,8 @@ import FuSubmitButton from './FuSubmitButton'
 
 export default function FuField( props ) {
 
-    const {fu, setFu, han, tsumoRon, setTotalPoint} = props;
+    const {visibleFuField, setVisibleFuField, visibleResultField, setVisibleResultField,
+        fu, setFu, han, tsumoRon, setTotalPoint, oyaKo} = props;
     
     return (
         <Box sx={{ mt: 3, mb: 3, ml: 1 }} >
@@ -38,7 +39,9 @@ export default function FuField( props ) {
             </Box>
 
             <FuResult {...{fu: fu, setFu: setFu}}/>
-            <FuSubmitButton {...{fu: fu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint}}/>
+            <FuSubmitButton {...{visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, 
+            visibleResultField: visibleResultField, setVisibleResultField: setVisibleResultField,fu: fu, 
+            setFu: setFu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint, oyaKo: oyaKo}}/>
         </Box>
     )
 }
