@@ -8,15 +8,11 @@ export default function YakuResult( props ) {
     
 
     return (
-        <Box sx={{
-            position: "sticky",
-            bottom: 0,
-            display: 'flex',
-            justifyContent: 'end'
-        }}>
+        <Box display='flex' alignItems='flex-end' justifyContent='flex-end' sx={{ position: "sticky", bottom: 0 }}>
             <Box sx={{
                 minWidth: 200,
                 maxWidth: 1000,
+                minHeight: 50,
                 maxHeight: 50,
                 backgroundColor: grey[200],
                 border: 5,
@@ -29,6 +25,7 @@ export default function YakuResult( props ) {
             }}>
                 {yakuList}
             </Box>
+            <Box display='flex' flexDirection='column'>
             <Box sx={{
                 minWidth: 75,
                 maxHeight: 50,
@@ -38,7 +35,7 @@ export default function YakuResult( props ) {
                 borderColor: teal[300],
                 p: 2,
                 display: 'flex',
-                fontSize: '32px'
+                fontSize: '20px'
             }}>
                 {yakuman}倍役満   
             </Box>
@@ -55,6 +52,8 @@ export default function YakuResult( props ) {
                 fontSize: '32px'
             }}>
                 {han}飜
+            </Box>
+                
             </Box>
         </Box>
     )

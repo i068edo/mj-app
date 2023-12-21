@@ -18,17 +18,17 @@ export default function YakuField( props ){
             han, setHan, yakuList, setYakuList, yakuNameList1,
             yakuNameList2, yakuNameList3, yakuNameList6,
             yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora, setDora,
-            yakuman, setYakuman, isPinfu, setIsPinfu, isChiitoitsu, setIsChiitoitsu} = props;
+            yakuman, setYakuman, isPinfu, setIsPinfu, isChiitoitsu, setIsChiitoitsu, setNaniman} = props;
     
     return(
         <Box sx={{mt:1, ml:1}}>
-            <Stack direction="row" spacing={5} sx={{mb:3}}>
+            <Box display='flex' flexWrap='wrap' gap='1rem' sx={{mb:1}}>
                 <OyaKoRadioGroup {...{ oyaKo: oyaKo, setOyaKo: setOyaKo }}/>
                 <MenzenFuuroRadioGroup {...{ menzenFuuro: menzenFuuro, setMenzenFuuro: setMenzenFuuro }}/>
                 <TsumoRonRadioGroup {...{ tsumoRon: tsumoRon, setTsumoRon: setTsumoRon }}/>
                 <DoraCount {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, 
                     dora: dora, setDora: setDora, }}/>
-            </Stack> 
+            </Box> 
             
             <YakuSubmitButton  {...{ visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,
                   visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
@@ -37,7 +37,7 @@ export default function YakuField( props ){
                   yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
                   yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
                   totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora:dora,yakuman: yakuman,setYakuman: setYakuman,
-                  isPinfu: isPinfu, isChiitoitsu: isChiitoitsu }}/>
+                  isPinfu: isPinfu, isChiitoitsu: isChiitoitsu, setNaniman: setNaniman }}/>
 
             <YakuList {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
                      yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,

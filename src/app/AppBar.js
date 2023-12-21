@@ -19,7 +19,7 @@ export default function ButtonAppBar() {
 
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            麻雀得点計算webアプリケーション
+            まーじゃんけいさん
           </Typography>
 
           <IconButton >
