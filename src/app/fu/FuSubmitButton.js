@@ -9,11 +9,12 @@ export default function FuSubmitButton( props ){
         fu, setFu, han, tsumoRon, setTotalPoint, oyaKo} = props;
 
     function FuSubmitClick(){
+
+        setFu((Math.ceil(fu / 10)) * 10);
+
         console.log(visibleFuField);
         setVisibleFuField(false);
         setVisibleResultField(true);
-
-        setFu((Math.ceil(fu / 10)) * 10);
 
         if(oyaKo == '親'){
             calculateOya();
@@ -25,7 +26,7 @@ export default function FuSubmitButton( props ){
     function calculateOya(){
         if(han == 1){
             if(tsumoRon == 'ロン'){
-                if(fu == 30){
+                if(fu <= 30){
                     setTotalPoint(1500);
                 }else if(fu == 40){
                     setTotalPoint(2000);
@@ -45,7 +46,7 @@ export default function FuSubmitButton( props ){
                     setTotalPoint(5300);
                 }
             }else if(tsumoRon == 'ツモ'){
-                if(fu == 30){
+                if(fu <= 30){
                     setTotalPoint(500+'オール');
                 }else if(fu == 40){
                     setTotalPoint(700+'オール');
@@ -69,8 +70,6 @@ export default function FuSubmitButton( props ){
             if(tsumoRon == 'ロン'){
                 if(fu == 20){
                     setTotalPoint(2000);
-                }else if(fu == 25){
-                    setTotalPoint(2500);
                 }else if(fu == 30){
                     setTotalPoint(2900);
                 }else if(fu == 40){
@@ -93,8 +92,6 @@ export default function FuSubmitButton( props ){
             }else if(tsumoRon == 'ツモ'){
                 if(fu == 20){
                     setTotalPoint(700+'オール');
-                }else if(fu == 25){
-                    setTotalPoint(800+'オール');
                 }else if(fu == 30){
                     setTotalPoint(1000+'オール');
                 }else if(fu == 40){
@@ -119,8 +116,6 @@ export default function FuSubmitButton( props ){
             if(tsumoRon == 'ロン'){
                 if(fu == 20){
                     setTotalPoint(3900);
-                }else if(fu == 25){
-                    setTotalPoint(4800);
                 }else if(fu == 30){
                     setTotalPoint(5800);
                 }else if(fu == 40){
@@ -135,8 +130,6 @@ export default function FuSubmitButton( props ){
             }else if(tsumoRon == 'ツモ'){
                 if(fu == 20){
                     setTotalPoint(1300+'オール');
-                }else if(fu == 25){
-                    setTotalPoint(1600+'オール');
                 }else if(fu == 30){
                     setTotalPoint(2000+'オール');
                 }else if(fu == 40){
@@ -153,8 +146,6 @@ export default function FuSubmitButton( props ){
             if(tsumoRon == 'ロン'){
                 if(fu == 20){
                     setTotalPoint(7700);
-                }else if(fu == 25){
-                    setTotalPoint(9600);
                 }else if(fu == 30){
                     setTotalPoint(116000);
                 }else if(fu >= 40){
@@ -163,8 +154,6 @@ export default function FuSubmitButton( props ){
             }else if(tsumoRon == 'ツモ'){
                 if(fu == 20){
                     setTotalPoint(2600+'オール');
-                }else if(fu == 25){
-                    setTotalPoint(3200+'オール');
                 }else if(fu == 30){
                     setTotalPoint(3900+'オール');
                 }else if(fu >= 40){
@@ -221,8 +210,6 @@ export default function FuSubmitButton( props ){
             if(tsumoRon == 'ロン'){
                 if(fu == 20){
                     setTotalPoint(1300);
-                }else if(fu == 25){
-                    setTotalPoint(1600);
                 }else if(fu == 30){
                     setTotalPoint(2000);
                 }else if(fu == 40){
@@ -245,8 +232,6 @@ export default function FuSubmitButton( props ){
             }else if(tsumoRon == 'ツモ'){
                 if(fu == 20){
                     setTotalPoint(400+'・'+700);
-                }else if(fu == 25){
-                    setTotalPoint(400+'・'+800);
                 }else if(fu == 30){
                     setTotalPoint(500+'・'+1000);
                 }else if(fu == 40){
@@ -271,8 +256,6 @@ export default function FuSubmitButton( props ){
             if(tsumoRon == 'ロン'){
                 if(fu == 20){
                     setTotalPoint(2600);
-                }else if(fu == 25){
-                    setTotalPoint(3200);
                 }else if(fu == 30){
                     setTotalPoint(3900);
                 }else if(fu == 40){
@@ -287,8 +270,6 @@ export default function FuSubmitButton( props ){
             }else if(tsumoRon == 'ツモ'){
                 if(fu == 20){
                     setTotalPoint(700+'・'+1300);
-                }else if(fu == 25){
-                    setTotalPoint(800+'・'+1600);
                 }else if(fu == 30){
                     setTotalPoint(1000+'・'+2000);
                 }else if(fu == 40){
@@ -305,8 +286,6 @@ export default function FuSubmitButton( props ){
             if(tsumoRon == 'ロン'){
                 if(fu == 20){
                     setTotalPoint(5200);
-                }else if(fu == 25){
-                    setTotalPoint(6400);
                 }else if(fu == 30){
                     setTotalPoint(7700);
                 }else if(fu >= 40){
@@ -315,8 +294,6 @@ export default function FuSubmitButton( props ){
             }else if(tsumoRon == 'ツモ'){
                 if(fu == 20){
                     setTotalPoint(1300+'・'+2600);
-                }else if(fu == 25){
-                    setTotalPoint(1600+'・'+3200);
                 }else if(fu == 30){
                     setTotalPoint(2000+'・'+3900);
                 }else if(fu >= 40){

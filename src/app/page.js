@@ -67,7 +67,8 @@ function ParentField(props) {
       {visibleFuField &&
        <FuField {...{ 
         visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
-        setVisibleResultField: setVisibleResultField, fu: fu, setFu: setFu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint, oyaKo: oyaKo
+        setVisibleResultField: setVisibleResultField, fu: fu, setFu: setFu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint, 
+        oyaKo: oyaKo, menzenFuuro: menzenFuuro
       }}/> }
       {visibleResultField &&
         <ResultField  {...{
@@ -83,7 +84,7 @@ function ParentField(props) {
 
 export default function Home() {
   const [visibleYakuField, setVisibleYakuField] = useState(true);
-  const [visibleFuField, setVisibleFuField] = useState(true);
+  const [visibleFuField, setVisibleFuField] = useState(false);
   const [visibleResultField, setVisibleResultField] = useState(false);
 
   return (

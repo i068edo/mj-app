@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 
 export default function FuResult( props ){
-    const {fu, setFu} = props;
+    const {fu, setFu, tsumoRon, menzenFuuro} = props;
 
     return(
         <>

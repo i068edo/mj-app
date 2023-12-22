@@ -14,7 +14,11 @@ export default function YakuSubmitButton( props ){
 
     function yakuSubmitClick(){
         setVisibleYakuField(false);
-        setVisibleResultField(true);
+        if( !((han >= 4) || (yakuman >= 1) || (isChiitoitsu) || (isPinfu) )){
+            setVisibleFuField(true);
+        }else{
+            setVisibleResultField(true);
+        }
 /* 
         setHan(han+dora); */
 
@@ -49,7 +53,7 @@ export default function YakuSubmitButton( props ){
     }
 
     function calculateOver4hanOya(){
-        if(han <= 5){
+        if((han >= 4) && (han <= 5)){
             setTotalPoint(12000);
             setNaniman('満貫');
         }else if(han <= 7){
@@ -68,7 +72,7 @@ export default function YakuSubmitButton( props ){
     }
 
     function calculateOver4hanTsumoKo(){
-        if(han <= 5){
+        if((han >= 4) && (han <= 5)){
             setTotalPoint(2000+'・'+4000);
             setNaniman('満貫');
         }else if(han <= 7){
@@ -87,7 +91,7 @@ export default function YakuSubmitButton( props ){
     }
 
     function calculateOver4hanRonKo(){
-        if(han <= 5){
+        if((han >= 4) && (han <= 5)){
             setTotalPoint(8000);
             setNaniman('満貫');
         }else if(han <= 7){
