@@ -1,23 +1,27 @@
 import * as React from 'react';
-import { useState } from 'react';
 import Box from '@mui/material/Box';
+import { teal, grey } from '@mui/material/colors';
 
-export default function FuResult( props ){
-    const {fu, setFu, tsumoRon, menzenFuuro} = props;
+export default function FuResult({ fu }) {
 
-    return(
-        <>
-            <Box sx={{ 
-                border: 1,
-                borderRadius: 2,
+
+    return (
+        
+            <Box sx={{
+                minWidth: 75,
+                maxHeight: 50,
+                backgroundColor: grey[200],
+                border: 5,
+                borderRadius: 6,
+                borderColor: teal[300],
                 p: 2,
-                minWidth: 30,
-                maxWidth: 60,
                 display: 'flex',
-                justifyContent: 'center'
-                }}>
+                justifyContent: 'end',
+                fontSize: '32px'
+            }}>
                 {fu}符
             </Box>
-        </>
+     
+
     )
 }

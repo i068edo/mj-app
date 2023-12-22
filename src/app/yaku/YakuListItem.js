@@ -1,17 +1,10 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
 import Checkbox from '@mui/material/Checkbox';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import { CenterFocusStrong } from '@mui/icons-material';
 
 export default function YakuListItem( props ) {
     const { key, yaku, hanCount, han, setHan, yakuList, setYakuList, yakuman,yakumanCount, setYakuman,
@@ -19,12 +12,12 @@ export default function YakuListItem( props ) {
     const [checked, setChecked] = useState(false);
 
     const kuisagariYakuList = [
-        "混全帯么九（チャンタ） 食い下がり一飜　",
-        "一気通貫（イッツー） 食い下がり一飜　",
-        "三色同順（サンショクドウジュン）食い下がり一飜　",
-        "純全帯么九（ジュンチャン）食い下がり一飜　",
-        "混一色（ホンイツ） 食い下がり一飜　",
-        "清一色（チンイツ） 食い下がり一飜　"
+        "混全帯么九（チャンタ） 食い下がり一飜 ",
+        "一気通貫（イッツー） 食い下がり一飜 ",
+        "三色同順（サンショクドウジュン）食い下がり一飜 ",
+        "純全帯么九（ジュンチャン）食い下がり一飜 ",
+        "混一色（ホンイツ） 食い下がり一飜 ",
+        "清一色（チンイツ） 食い下がり一飜 "
     ];
     const oneYakumanNameList = ["天和（テンホー）", "地和（チーホー）",
     "大三元（ダイサンゲン）", "四暗刻（スーアンコウ）", "字一色（ツーイーソー）",
