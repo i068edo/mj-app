@@ -17,7 +17,7 @@ function ParentField(props) {
   const [menzenFuuro, setMenzenFuuro] = useState('');
   const [tsumoRon, setTsumoRon] = useState('');
   const [han, setHan] = useState(0);
-  const [fu, setFu] = useState(0);
+  const [fu, setFu] = useState(20);
   const [dora, setDora] = useState(0);
   const [honba, setHonba] = useState(0);
   const [totalPoint, setTotalPoint] = useState(0);
@@ -63,8 +63,13 @@ function ParentField(props) {
           totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora, yakuman: yakuman, setYakuman: setYakuman,
           isPinfu: isPinfu, setIsPinfu: setIsPinfu,isChiitoitsu: isChiitoitsu, setIsChiitoitsu: setIsChiitoitsu, setNaniman: setNaniman
         }} />
-      } 
-      {/* <FuField /> */}
+      }
+      {visibleFuField &&
+       <FuField {...{ 
+        visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
+        setVisibleResultField: setVisibleResultField, fu: fu, setFu: setFu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint, 
+        oyaKo: oyaKo, menzenFuuro: menzenFuuro
+      }}/> }
       {visibleResultField &&
         <ResultField  {...{
           oyaKo: oyaKo, tsumoRon: tsumoRon, han: han, yakuList: yakuList, totalPoint: totalPoint, yakuman: yakuman,
@@ -79,7 +84,7 @@ function ParentField(props) {
 
 export default function Home() {
   const [visibleYakuField, setVisibleYakuField] = useState(true);
-  const [visibleFuField, setVisibleFuField] = useState(true);
+  const [visibleFuField, setVisibleFuField] = useState(false);
   const [visibleResultField, setVisibleResultField] = useState(false);
 
   return (
