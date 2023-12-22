@@ -51,7 +51,7 @@ function ParentField(props) {
 
   return (
     <div>
-      {visibleYakuField &&
+      {/* {visibleYakuField &&
         <YakuField {...{
           visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,
           visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
@@ -61,7 +61,7 @@ function ParentField(props) {
           yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
           totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora, yakuman: yakuman, setYakuman: setYakuman
         }} />
-      }
+      } */}
       {/* <FuField /> */}
       {visibleResultField &&
         <ResultField  {...{
