@@ -1,12 +1,14 @@
 "use client"
 import * as React from 'react';
 import { useState } from 'react';
+import {useReducer} from 'react'
 
 import AppBar from './AppBar';
 import YakuField from './yaku/YakuField';
 import FuField from './fu/FuField';
 import ResultField from './result/ResultField';
 import { render } from 'react-dom';
+
 
 function ParentField(props) {
   const { visibleYakuField, setVisibleYakuField,
@@ -17,7 +19,7 @@ function ParentField(props) {
   const [menzenFuuro, setMenzenFuuro] = useState('');
   const [tsumoRon, setTsumoRon] = useState('');
   const [han, setHan] = useState(0);
-  const [fu, setFu] = useState(20);
+  const [fu, setFu] = useState();
   const [dora, setDora] = useState(0);
   const [honba, setHonba] = useState(0);
   const [totalPoint, setTotalPoint] = useState(0);
@@ -52,28 +54,27 @@ function ParentField(props) {
 
   return (
     <div>
+
       {visibleYakuField &&
         <YakuField {...{
-          visibleYakuField: visibleYakuField, setVisibleYakuField: setVisibleYakuField,
-          visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
-          setVisibleResultField: setVisibleResultField, oyaKo: oyaKo, setOyaKo: setOyaKo, menzenFuuro: menzenFuuro, setMenzenFuuro: setMenzenFuuro,
-          tsumoRon: tsumoRon, setTsumoRon: setTsumoRon, han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList,
-          yakuNameList1: yakuNameList1, yakuNameList2: yakuNameList2, yakuNameList3: yakuNameList3,
-          yakuNameList6: yakuNameList6, yakumanNameList: yakumanNameList, yakumanNameList2: yakumanNameList2,
-          totalPoint: totalPoint, setTotalPoint: setTotalPoint, dora: dora, setDora: setDora, yakuman: yakuman, setYakuman: setYakuman,
-          isPinfu: isPinfu, setIsPinfu: setIsPinfu,isChiitoitsu: isChiitoitsu, setIsChiitoitsu: setIsChiitoitsu, setNaniman: setNaniman
+          visibleYakuField, setVisibleYakuField,
+          visibleFuField,  setVisibleFuField,  visibleResultField,
+          setVisibleResultField, oyaKo,  setOyaKo, menzenFuuro, setMenzenFuuro,
+           tsumoRon,  setTsumoRon,  han,  setHan,  yakuList,  setYakuList,
+           yakuNameList1,  yakuNameList2,  yakuNameList3,
+           yakuNameList6, yakumanNameList, yakumanNameList2,
+          totalPoint, setTotalPoint, dora, setDora, yakuman, setYakuman,
+          isPinfu, setIsPinfu, isChiitoitsu, setIsChiitoitsu, setNaniman, fu, setFu
         }} />
       }
       {visibleFuField &&
        <FuField {...{ 
-        visibleFuField: visibleFuField, setVisibleFuField: setVisibleFuField, visibleResultField: visibleResultField,
-        setVisibleResultField: setVisibleResultField, fu: fu, setFu: setFu, han: han, tsumoRon: tsumoRon, setTotalPoint: setTotalPoint, 
-        oyaKo: oyaKo, menzenFuuro: menzenFuuro
+        visibleFuField, setVisibleFuField, visibleResultField, setVisibleResultField,
+        fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, menzenFuuro
       }}/> }
       {visibleResultField &&
         <ResultField  {...{
-          oyaKo: oyaKo, tsumoRon: tsumoRon, han: han, yakuList: yakuList, totalPoint: totalPoint, yakuman: yakuman,
-          fu: fu, naniman: naniman
+          oyaKo, tsumoRon, han, yakuList, totalPoint, yakuman, fu, naniman
         }} />
       }
     </div>
@@ -92,12 +93,12 @@ export default function Home() {
       <AppBar />
 
       <ParentField {...{
-        visibleYakuField: visibleYakuField,
-        setVisibleYakuField: setVisibleYakuField,
-        visibleFuField: visibleFuField,
-        setVisibleFuField: setVisibleFuField,
-        visibleResultField: visibleResultField,
-        setVisibleResultField: setVisibleResultField
+        visibleYakuField,
+        setVisibleYakuField,
+        visibleFuField,
+        setVisibleFuField,
+        visibleResultField,
+        setVisibleResultField
       }}
       />
     </main>

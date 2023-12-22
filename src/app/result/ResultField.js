@@ -23,7 +23,7 @@ export default function ResultField(props) {
         <>
             <Button variant='contained' sx={{ mt: 1, mb: 3 }} onClick={backButtonClick}>戻る</Button>
 
-            <Box width={300}>
+            <Box width={400}>
 
                 <Paper elevation={3} >
 

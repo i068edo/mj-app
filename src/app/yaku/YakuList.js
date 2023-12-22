@@ -31,7 +31,7 @@ export default function YakuList(props) {
           <Grid container spacing={2}>
             {yakuNameList1.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={1}
-                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, isPinfu: isPinfu, setIsPinfu: setIsPinfu }} />
+                {...{ han, setHan, yakuList, setYakuList, isPinfu, setIsPinfu }} />
             ))}
           </Grid>
         </nav>
@@ -44,7 +44,7 @@ export default function YakuList(props) {
           <Grid container spacing={2}>
             {yakuNameList2.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={2}
-                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList, isChiitoitsu: isChiitoitsu, setIsChiitoitsu: setIsChiitoitsu }} />
+                {...{ han, setHan, yakuList, setYakuList, isChiitoitsu, setIsChiitoitsu }} />
             ))}
           </Grid>
         </nav>
@@ -57,7 +57,7 @@ export default function YakuList(props) {
           <Grid container spacing={2}>
             {yakuNameList3.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={3}
-                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
+                {...{ han, setHan, yakuList, setYakuList }} />
             ))}
           </Grid>
         </nav>
@@ -70,7 +70,7 @@ export default function YakuList(props) {
           <Grid container spacing={2}>
             {yakuNameList6.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={6}
-                {...{ han: han, setHan: setHan, yakuList: yakuList, setYakuList: setYakuList }} />
+                {...{ han, setHan, yakuList, setYakuList }} />
             ))}
           </Grid>
         </nav>
@@ -83,7 +83,7 @@ export default function YakuList(props) {
           <Grid container spacing={2}>
             {yakumanNameList.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} yakumanCount={1}
-                {...{ yakuman: yakuman, setYakuman: setYakuman, yakuList: yakuList, setYakuList: setYakuList, yakumanNameList: yakumanNameList}} />
+                {...{ yakuman, setYakuman, yakuList, setYakuList, yakumanNameList}} />
             ))}
           </Grid>
         </nav>
@@ -96,7 +96,7 @@ export default function YakuList(props) {
           <Grid container spacing={2}>
             {yakumanNameList2.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} yakumanCount={2}
-                {...{ yakuman: yakuman, setYakuman: setYakuman, yakuList: yakuList, setYakuList: setYakuList }} />
+                {...{ yakuman, setYakuman, yakuList, setYakuList }} />
             ))}
           </Grid>
         </nav>
