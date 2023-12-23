@@ -10,7 +10,7 @@ export default function FuSubmitButton( props ){
 
     function FuSubmitClick(){
 
-        setFu((Math.ceil(fu / 10)) * 10);
+        setFu(fu => (Math.ceil(fu / 10)) * 10);
 
         console.log(visibleFuField);
         setVisibleFuField(false);
@@ -26,7 +26,7 @@ export default function FuSubmitButton( props ){
     function calculateOya(){
         if(han == 1){
             if(tsumoRon == 'ロン'){
-                if(fu <= 30){
+                if(fu == 30){
                     setTotalPoint(1500);
                 }else if(fu == 40){
                     setTotalPoint(2000);
