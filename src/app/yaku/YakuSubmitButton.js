@@ -9,17 +9,21 @@ import { useReducer } from 'react';
 export default function YakuSubmitButton( props ){
     const { setVisibleYakuField, setVisibleFuField, setVisibleResultField, 
             oyaKo, menzenFuuro, tsumoRon, han, setFu, setTotalPoint, 
-            yakuman, isChiitoitsu, isPinfu, setNaniman } = props;
+            yakuman, isChiitoitsu, isPinfu, setNaniman, 
+            setOyaKoRadioGroupError,
+            setMenzenFuuroRadioGroupError,
+            setTsumoRonRadioGroupError } = props;
 
-
-    function yakuSubmitClick(){
+    function filedControleFromYaku(){
         setVisibleYakuField(false);
         if( yakuman > 0 || isChiitoitsu || isPinfu || han >= 5 ){
             setVisibleResultField(true);
         }else{
             setVisibleFuField(true);    
         }
+    }
 
+    function calculateBranch(){
         if( yakuman > 0 ){
             if( oyaKo == '親' ){
                 calculateYakumanOya();
@@ -59,7 +63,21 @@ export default function YakuSubmitButton( props ){
         }else{
             initFu();
         }
-        
+    }
+
+    function yakuSubmitClick(){
+        if(oyaKo==''){
+            setOyaKoRadioGroupError(true);
+            return 1;
+        }else if(menzenFuuro==''){
+            setMenzenFuuroRadioGroupError(true);
+            return 1;
+        }else if(tsumoRon==''){
+            setTsumoRonRadioGroupError(true);
+            return 1;
+        }
+        filedControleFromYaku();
+        calculateBranch();
     }
 
     function calculateOver4hanOya(){
