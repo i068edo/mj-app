@@ -20,7 +20,7 @@ function ParentField(props) {
   const [tsumoRon, setTsumoRon] = useState('');
   const [han, setHan] = useState(0);
   const [fu, setFu] = useState();
-  const [dora, setDora] = useState(0);
+  const [dora, setDora] = useState();
   const [totalPoint, setTotalPoint] = useState(0);
   const [isChiitoitsu, setIsChiitoitsu] = useState(false);
   const [isPinfu, setIsPinfu] = useState(false);
