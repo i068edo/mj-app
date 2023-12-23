@@ -16,22 +16,29 @@ export default function ButtonAppBar() {
   const [modalOpen, setModalOpen] = useState(false);
   const handleOpen = () => setModalOpen(true);
   const handleClose = () => setModalOpen(false);
+  function backButtonClick() {
+    window.location.reload();
+  }
   return (
-    <Box sx={{ flexGrow: 1 , mb:10}} >
+    <Box sx={{ flexGrow: 1, mb: 10 }} >
       <AppBar position='fixed' color='info' enableColorOnDark >
-        <Toolbar>
-    
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            まーじゃんけいさん
-          </Typography>
+
+        <Box display='flex' justifyContent='space-between' sx={{ml:2, mr: 2}}>
+
+          <Button onClick={backButtonClick}>
+            <Typography variant="h6" component="div" color='white'>
+              まーじゃんけいさん
+            </Typography>
+          </Button>
 
           <IconButton onClick={handleOpen}>
-            < QuestionMarkRoundedIcon fontSize="large"  sx={{color: yellow[500]}} />
+            < QuestionMarkRoundedIcon fontSize="large" sx={{ color: yellow[500] }} />
           </IconButton>
 
-          <QuestionModal open={modalOpen} handleOpen={handleOpen} handleClose={handleClose} />
+        </Box>
 
-        </Toolbar>
+        <QuestionModal open={modalOpen} handleOpen={handleOpen} handleClose={handleClose} />
+
       </AppBar>
     </Box>
   );

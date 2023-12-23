@@ -33,59 +33,61 @@ export default function YakuListItem( props ) {
     const isTwoYakuman = twoYakumanNameList.includes(yaku);
 
 
-    const handleChange = (event) => {
-        setChecked(event.target.checked);
+    const handleChange = () => {
+        const thisChecked = !checked;
+        setChecked( thisChecked );
+        
         if(isKuisagari){
-            if(checked){
-                setHan(han - hanCount+1);
-                removeYakuListItem();
-            }else{
+            if(thisChecked){
                 setHan(han + hanCount-1);      
                 setYakuList([...yakuList, yaku]);
+            }else{
+                setHan(han - hanCount+1);
+                removeYakuListItem();
             }
         }else if(isYakuman){
-            if(checked){
-                setYakuman(yakuman - yakumanCount);
-                removeYakuListItem();
-            }else{
+            if(thisChecked){
                 setYakuman(yakuman + yakumanCount);      
                 setYakuList([...yakuList, yaku]);
+            }else{
+                setYakuman(yakuman - yakumanCount);
+                removeYakuListItem();
             }
         }else if(isTwoYakuman){
-            if(checked){
-                setYakuman(yakuman - yakumanCount);
-                removeYakuListItem();
-            }else{
+            if(thisChecked){
                 setYakuman(yakuman + yakumanCount);      
                 setYakuList([...yakuList, yaku]);
+            }else{
+                setYakuman(yakuman - yakumanCount);
+                removeYakuListItem();
             }
         }else if(yaku=="七対和（チートイ）"){
-            if(checked){
-                setIsChiitoitsu(false);
-                setHan(han - hanCount);
-                removeYakuListItem();
-            }else{
+            if(thisChecked){
                 setIsChiitoitsu(true);
                 setHan(han + hanCount);
                 setYakuList([...yakuList, yaku]);
-            }
-        }else if(yaku==="平和（ピンフ）"){
-            if(checked){
-                setIsPinfu(false);
+            }else{
+                setIsChiitoitsu(false);
                 setHan(han - hanCount);
                 removeYakuListItem();
-            }else{
+            }
+        }else if(yaku==="平和（ピンフ）"){
+            if(thisChecked){
                 setIsPinfu(true);
                 setHan(han + hanCount);
                 setYakuList([...yakuList, yaku]);
-            }
-        }else{
-            if(checked){
+            }else{
+                setIsPinfu(false);
                 setHan(han - hanCount);
                 removeYakuListItem();
-            }else{
+            }
+        }else{
+            if(thisChecked){
                 setHan(han + hanCount);      
                 setYakuList([...yakuList, yaku]);
+            }else{
+                setHan(han - hanCount);
+                removeYakuListItem();
             }
         }
     };
@@ -101,11 +103,9 @@ export default function YakuListItem( props ) {
         <div>
             <Grid item xs={12}  sx={{width: 300}}>
                 <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton onClick={handleChange}>
                         <ListItemText primary={yaku} />
-                        <Checkbox checked={checked} onChange={handleChange}
-                        /*  inputProps={{ 'aria-label': 'controlled' }} */
-                        />
+                        <Checkbox checked={checked}/*  onChange={handleChange} *//>
                     </ListItemButton>
                 </ListItem>
             </Grid>

@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import YakuListItem from './YakuListItem';
 import Typography from '@mui/material/Typography';
+import { green, grey } from '@mui/material/colors';
 
 
 export default function YakuList(props) {
@@ -16,8 +17,8 @@ export default function YakuList(props) {
     <div>
       <Box sx={{ flexGrow: 1 }}>
         <nav aria-label="一飜">
-          <Typography gutterBottom variant="h5" component="div">一飜役</Typography>
-          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Typography gutterBottom variant="h5" component="div" color={green[400]} >一飜役</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}} color={grey[500]} >成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakuNameList1.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={1}
@@ -29,8 +30,8 @@ export default function YakuList(props) {
 
       <Box sx={{ flexGrow: 1 }}>
         <nav aria-label="二飜">
-          <Typography gutterBottom variant="h5" component="div">二飜役</Typography>
-          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Typography gutterBottom variant="h5" component="div" color={green[500]}>二飜役</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}} color={grey[500]} >成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakuNameList2.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={2}
@@ -42,8 +43,8 @@ export default function YakuList(props) {
 
       <Box sx={{ flexGrow: 1 }}>
         <nav aria-label="三飜">
-          <Typography gutterBottom variant="h5" component="div">三飜役</Typography>
-          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Typography gutterBottom variant="h5" component="div" color={green[600]}>三飜役</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}} color={grey[500]} >成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakuNameList3.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={3}
@@ -55,8 +56,8 @@ export default function YakuList(props) {
 
       <Box sx={{ flexGrow: 1 }}>
         <nav aria-label="六飜">
-          <Typography gutterBottom variant="h5" component="div">六飜役</Typography>
-          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Typography gutterBottom variant="h5" component="div" color={green[700]}>六飜役</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}} color={grey[500]}>成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakuNameList6.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} hanCount={6}
@@ -68,8 +69,8 @@ export default function YakuList(props) {
  
       <Box sx={{ flexGrow: 1 }}>
         <nav aria-label="役満">
-          <Typography gutterBottom variant="h5" component="div">役満</Typography>
-          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Typography gutterBottom variant="h5" component="div" color={green[800]}>役満</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}} color={grey[500]}>成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakumanNameList.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} yakumanCount={1}
@@ -81,8 +82,8 @@ export default function YakuList(props) {
 
       <Box sx={{ flexGrow: 1 }}>
         <nav aria-label="２倍役満">
-          <Typography gutterBottom variant="h5" component="div">２倍役満</Typography>
-          <Typography gutterBottom variant="body1" sx={{mb:3}}>成立した役を選択して下さい。</Typography>
+          <Typography gutterBottom variant="h5" component="div" color={green[900]}>２倍役満</Typography>
+          <Typography gutterBottom variant="body1" sx={{mb:3}} color={grey[500]} >成立した役を選択して下さい。</Typography>
           <Grid container spacing={2}>
             {yakumanNameList2.map((yaku, index) => (
               <YakuListItem key={index} yaku={yaku} yakumanCount={2}
