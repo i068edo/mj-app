@@ -14,16 +14,14 @@ export default function ResultField(props) {
     const { oyaKo, tsumoRon,  han, fu,  yakuList, totalPoint, naniman } = props;
 
     function backButtonClick() {
-        /* setVisibleYakuField(true);
-        setVisibleResultField(false); */
         window.location.reload();
     }
 
     return (
         <>
-            <Button variant='contained' sx={{ mt: 1, mb: 3 }} onClick={backButtonClick}>戻る</Button>
+            <Button variant='contained' sx={{ mt: 1, mb: 3, ml: 4 }} onClick={backButtonClick}>はじめに戻る</Button>
 
-            <Box width={400}>
+            <Box width='80vw' margin='0 auto'>
 
                 <Paper elevation={3} >
 
