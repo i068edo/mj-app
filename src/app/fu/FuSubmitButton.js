@@ -5,7 +5,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 
 export default function FuSubmitButton( props ){
     const { setVisibleFuField, setVisibleResultField, 
-            fu, setFu, han, tsumoRon, setTotalPoint, oyaKo} = props;
+            fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, setNaniman } = props;
 
     let basicPoint = 0;
 
@@ -20,9 +20,13 @@ export default function FuSubmitButton( props ){
     function FuSubmitClick(){
         setVisibleFuField(false);
         setVisibleResultField(true);
-
         calculateBasicPoint();
-        calculatePointFu();
+        
+        if( (han == 3 && fu > 60) || (han == 4 && fu > 30) ){
+            calculateManganPoint();
+        }else{
+            calculatePointFu();
+        }
     }
 
     function calculateBasicPoint(){
@@ -43,6 +47,15 @@ export default function FuSubmitButton( props ){
             }else{
                 setTotalPoint(roundUp10(basicPoint*4));
             }
+        }
+    }
+
+    function calculateManganPoint(){
+        setNaniman('満貫');
+        if(oyaKo=='親'){
+            setTotalPoint(12000);
+        }else{
+            setTotalPoint(8000);
         }
     }
 

@@ -13,7 +13,7 @@ import FuSubmitButton from './FuSubmitButton'
 
 export default function FuField(props) {
     const { visibleFuField, setVisibleFuField, visibleResultField, setVisibleResultField,
-        fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, menzenFuuro } = props;
+        fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, menzenFuuro, setNaniman } = props;
     let preSelectedMentsu0Fu;
     let preSelectedMentsu1Fu;
     let preSelectedMentsu2Fu;
@@ -48,7 +48,7 @@ export default function FuField(props) {
             <Box display='flex' alignItems='flex-end' justifyContent='space-between' sx={{ position: "sticky", bottom: 0 }}>
                 <FuSubmitButton {...{
                     setVisibleFuField, setVisibleResultField,
-                    fu, setFu, han, tsumoRon, setTotalPoint, oyaKo
+                    fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, setNaniman
                 }} />
                 <FuResult {...{ fu }} />
             </Box>
