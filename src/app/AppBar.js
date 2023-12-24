@@ -1,4 +1,5 @@
 import * as React from 'react';
+const { useState } = React;
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,25 +9,36 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import QuestionMarkRoundedIcon from '@mui/icons-material/QuestionMarkRounded';
 import { yellow } from '@mui/material/colors';
+import QuestionModal from './QuestionModal';
+
 
 export default function ButtonAppBar() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleOpen = () => setModalOpen(true);
+  const handleClose = () => setModalOpen(false);
+  function backButtonClick() {
+    window.location.reload();
+  }
   return (
-    <Box sx={{ flexGrow: 1 , mb:10}} >
+    <Box sx={{ flexGrow: 1, mb: 10 }} >
       <AppBar position='fixed' color='info' enableColorOnDark >
-        <Toolbar>
-    
 
+        <Box display='flex' justifyContent='space-between' sx={{ml:2, mr: 2}}>
 
+          <Button onClick={backButtonClick}>
+            <Typography variant="h6" component="div" color='white'>
+              まーじゃんけいさん
+            </Typography>
+          </Button>
 
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            まーじゃんけいさん
-          </Typography>
-
-          <IconButton >
-            < QuestionMarkRoundedIcon fontSize="large"  sx={{color: yellow[500]}} />
+          <IconButton onClick={handleOpen}>
+            < QuestionMarkRoundedIcon fontSize="large" sx={{ color: yellow[500] }} />
           </IconButton>
 
-        </Toolbar>
+        </Box>
+
+        <QuestionModal open={modalOpen} handleOpen={handleOpen} handleClose={handleClose} />
+
       </AppBar>
     </Box>
   );

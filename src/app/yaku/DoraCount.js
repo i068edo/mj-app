@@ -1,19 +1,28 @@
 import * as React from 'react';
 import { useState } from 'react';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 export default function DoraCount(props) {
   const { han, setHan, yakuList, setYakuList, dora, setDora} = props;
+  const [doraError, setDoraError] = useState(false);
+  const [helperText, setHelperText] = useState('');
+  
 
   function updateDora(event){
     setDora(event.target.value);
   }
 
   function confirmDora(){
+    if( !(dora > 0) ){
+      setDoraError(true);
+      setHelperText('不正な値です。')
+      return 1;
+    }
+    setDoraError(false);
+    setHelperText('OK');
     setHan(han + Number(dora));
     const doraName = 'ドラ ' + dora;      
     setYakuList([...yakuList, doraName]);
@@ -33,7 +42,7 @@ export default function DoraCount(props) {
 
 
   return (
-    <Box sx={{ mt: 1 }} display='flex' flexDirection='row' alignItems='flex-start'>
+    <Box display='flex' flexDirection='column' alignItems='flex-start'>
       <TextField id="ドラの数"
                  label="ドラの数"
                  type="number"
@@ -41,16 +50,18 @@ export default function DoraCount(props) {
                  color="secondary" 
                  value={dora}
                  onChange={updateDora}
-                 sx={{ width: 100, m:1 }}
+                 sx={{ width: 120, m:1 }}
+                 error={doraError}
+                 helperText={helperText}
+
                  
                  
     />
 
-    <Box display='flex' flexDirection='column'>
-      <Button variant="outlined"  onClick={confirmDora} color="secondary" sx={{m:1}}>ドラの数を確定</Button>
-      <Button variant="outlined"  onClick={deleteDora} color="secondary" sx={{m:1}}>ドラの数を削除</Button>
-    
-    </Box>
+      <ButtonGroup variant="outlined" color="secondary">
+        <Button onClick={confirmDora} >ドラの数を確定</Button>
+        <Button onClick={deleteDora} >ドラの数を削除</Button>
+      </ButtonGroup>
     
     
 
