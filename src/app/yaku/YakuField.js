@@ -14,6 +14,7 @@ import DoraCount from './DoraCount';
 export default function YakuField( props ){
     const { visibleYakuField, setVisibleYakuField, visibleFuField, setVisibleFuField,
             visibleResultField, setVisibleResultField,
+            visibleResultFuField, setVisibleResultFuField, visibleResultYakuField, setVisibleResultYakuField,/* 変更*/
             oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro, tsumoRon, setTsumoRon,
             han, setHan, fu, setFu, yakuList, setYakuList, yakuNameList1,
             yakuNameList2, yakuNameList3, yakuNameList6,
@@ -38,7 +39,9 @@ export default function YakuField( props ){
             
             <YakuSubmitButton  {...{ visibleYakuField, setVisibleYakuField,
                   visibleFuField, setVisibleFuField, visibleResultField,
-                  setVisibleResultField, oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro,
+                  setVisibleResultField,
+                  visibleResultFuField, setVisibleResultFuField, visibleResultYakuField, setVisibleResultYakuField, /* 変更*/
+                   oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro,
                   tsumoRon, setTsumoRon, han, setHan, fu, setFu, yakuList, setYakuList, 
                   yakuNameList1, yakuNameList2, yakuNameList3,
                   yakuNameList6, yakumanNameList, yakumanNameList2,

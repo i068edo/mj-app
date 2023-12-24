@@ -36,7 +36,11 @@ export default function FuSubmitButton( props ){
 
     function calculatePointFu(){
         if( oyaKo == '親' ){
-            setTotalPoint( roundUp10(basicPoint*2*3) );
+            if( tsumoRon == 'ツモ'){ /* 変更 ただしオール表記に違和感 */
+                setTotalPoint( roundUp10(basicPoint*2) + 'オール' ); 
+            }else{
+                setTotalPoint( roundUp10(basicPoint*2*3) );
+            }
         }else{
             if( tsumoRon == 'ツモ' ){
                 setTotalPoint( roundUp10(basicPoint) + '・' + roundUp10(basicPoint*2) );

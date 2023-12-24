@@ -13,7 +13,8 @@ import { render } from 'react-dom';
 function ParentField(props) {
   const { visibleYakuField, setVisibleYakuField,
     visibleFuField, setVisibleFuField,
-    visibleResultField, setVisibleResultField } = props;
+    visibleResultField, setVisibleResultField,
+  visibleResultFuField, setVisibleResultFuField,visibleResultYakuField, setVisibleResultYakuField /* 変更*/} = props;
 
   const [oyaKo, setOyaKo] = useState('');
   const [menzenFuuro, setMenzenFuuro] = useState('');
@@ -57,7 +58,9 @@ function ParentField(props) {
         <YakuField {...{
           visibleYakuField, setVisibleYakuField,
           visibleFuField,  setVisibleFuField,  visibleResultField,
-          setVisibleResultField, oyaKo,  setOyaKo, menzenFuuro, setMenzenFuuro,
+          setVisibleResultField, 
+          visibleResultFuField, setVisibleResultFuField,visibleResultYakuField, setVisibleResultYakuField,  /* 変更*/
+          oyaKo,  setOyaKo, menzenFuuro, setMenzenFuuro,
            tsumoRon,  setTsumoRon,  han,  setHan,  yakuList,  setYakuList,
            yakuNameList1,  yakuNameList2,  yakuNameList3,
            yakuNameList6, yakumanNameList, yakumanNameList2,
@@ -74,6 +77,7 @@ function ParentField(props) {
       {visibleResultField &&
         <ResultField  {...{
           oyaKo, tsumoRon, han, yakuList, totalPoint, yakuman, fu, naniman
+          ,visibleResultFuField, visibleResultYakuField /* 変更*/
         }} />
       }
     </div>
@@ -87,6 +91,9 @@ export default function Home() {
   const [visibleFuField, setVisibleFuField] = useState(false);
   const [visibleResultField, setVisibleResultField] = useState(false);
 
+  const [visibleResultYakuField, setVisibleResultYakuField] = useState(true); /* 変更*/
+  const [visibleResultFuField, setVisibleResultFuField] = useState(false); /* 変更*/
+
   return (
     <main className="body">
       <AppBar />
@@ -97,7 +104,11 @@ export default function Home() {
         visibleFuField,
         setVisibleFuField,
         visibleResultField,
-        setVisibleResultField
+        setVisibleResultField,
+        visibleResultFuField, /* 変更*/
+        setVisibleResultFuField,
+        visibleResultYakuField,
+        setVisibleResultYakuField /* 変更*/
       }}
       />
     </main>

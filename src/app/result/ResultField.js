@@ -11,12 +11,13 @@ import { EditNote } from '@mui/icons-material';
 import { grey } from '@mui/material/colors';
 
 export default function ResultField(props) {
-    const { oyaKo, tsumoRon,  han, fu,  yakuList, totalPoint, naniman } = props;
+    const { oyaKo, tsumoRon,  han, fu,  yakuList, totalPoint, naniman
+        ,visibleResultFuFeild, visibleResultYakuField /* 変更*/ } = props;
 
     function backButtonClick() {
         window.location.reload();
     }
-
+    /* 翻と符の表記部分の変更 */
     return (
         <>
             <Button variant='contained' sx={{ mt: 1, mb: 3, ml: 4 }} onClick={backButtonClick}>はじめに戻る</Button>
@@ -34,8 +35,8 @@ export default function ResultField(props) {
                         <div>
                             <Typography gutterBottom variant='subtitle1' color={grey[700]} sx={{ m: 1 }}>合計</Typography>
                             <Stack direction="row" alignItems='flex-end' spacing={2} sx={{ m: 1 }}>
-                                <Typography gutterBottom variant="h3">{han} 飜</Typography>
-                                <Typography gutterBottom variant="h5">{fu} 符</Typography>
+                                {visibleResultYakuField &&<Typography gutterBottom variant="h3">{han} 飜</Typography>}
+                                {visibleResultFuFeild && <Typography gutterBottom variant="h5">{fu} 符</Typography>}
                             </Stack>
                         </div>
 

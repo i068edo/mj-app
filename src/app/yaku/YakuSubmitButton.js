@@ -7,7 +7,8 @@ import { useReducer } from 'react';
 
 
 export default function YakuSubmitButton( props ){
-    const { setVisibleYakuField, setVisibleFuField, setVisibleResultField, 
+    const { setVisibleYakuField, setVisibleFuField, setVisibleResultField,
+            setvisibleResultFuField, setVisibleResultYakuField, /* 変更*/
             oyaKo, menzenFuuro, tsumoRon, han, setFu, setTotalPoint, 
             yakuman, isChiitoitsu, isPinfu, setNaniman, 
             setOyaKoRadioGroupError,
@@ -18,8 +19,12 @@ export default function YakuSubmitButton( props ){
         setVisibleYakuField(false);
         if( yakuman > 0 || isChiitoitsu || isPinfu || han >= 5 ){
             setVisibleResultField(true);
+            if( yakuman > 0){ /* 変更*/
+                setVisibleResultYakuField(false);
+            }
         }else{
-            setVisibleFuField(true);    
+            setVisibleFuField(true);
+            setvisibleResultFuField(true); /* 変更*/
         }
     }
 
