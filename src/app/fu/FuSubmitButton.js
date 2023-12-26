@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import TelegramIcon from '@mui/icons-material/Telegram';
+import CalculateIcon from '@mui/icons-material/Calculate';
 
 export default function FuSubmitButton( props ){
     const { setVisibleFuField, setVisibleResultField, 
@@ -63,7 +64,7 @@ export default function FuSubmitButton( props ){
     return(
         <div>
             <Button variant='contained' sx={{ mt: 1, mb: 3 }} onClick={FuSubmitClick}>
-                <span>送信する</span><TelegramIcon />
+                <span>計算する</span><CalculateIcon sx={{ml: 1}}/>
             </Button>
         </div>
     )

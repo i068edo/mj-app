@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import TelegramIcon from '@mui/icons-material/Telegram';
+import CalculateIcon from '@mui/icons-material/Calculate';
+import Box from '@mui/material/Box';
 
 import { useReducer } from 'react';
 
@@ -299,7 +301,7 @@ export default function YakuSubmitButton( props ){
     return(
         <div>
             <Button variant='contained' sx={{ mt: 1, mb: 3 }} onClick={yakuSubmitClick}>
-                <span>送信する</span><TelegramIcon />
+                <span>計算する</span><CalculateIcon sx={{ml: 1}}/>
             </Button>
         </div>
     )

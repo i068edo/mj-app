@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import FormLabel from '@mui/material/FormLabel';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+
 
 import MentsuSelect from './MentsuSelect';
 import JantoSelect from './JantoSelect';
@@ -23,7 +23,6 @@ export default function FuField(props) {
         <Box sx={{ m: 2 }} maxWidth={600} >
             <Typography gutterBottom variant="h5" component="div">符計算が必要です。</Typography>
             <Typography gutterBottom variant="body1" sx={{ mb: 3 }}>あてはまるものをリストから選んでください。</Typography>
-            <Button variant='contained' sx={{ mt: 1, mb: 3 }} onClick={backButtonClick}>はじめに戻る</Button>
 
             <Grid container spacing={2}>
                 <Grid item display='flex' flexDirection='column' width={300}>
