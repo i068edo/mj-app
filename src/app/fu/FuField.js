@@ -14,10 +14,6 @@ import FuSubmitButton from './FuSubmitButton'
 export default function FuField(props) {
     const { visibleFuField, setVisibleFuField, visibleResultField, setVisibleResultField,
         fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, menzenFuuro, setNaniman } = props;
-    let preSelectedMentsu0Fu;
-    let preSelectedMentsu1Fu;
-    let preSelectedMentsu2Fu;
-    let preSelectedMentsu3Fu;
 
     function backButtonClick() {
         window.location.reload();
@@ -32,10 +28,10 @@ export default function FuField(props) {
             <Grid container spacing={2}>
                 <Grid item display='flex' flexDirection='column' width={300}>
                     <FormLabel>メンツ</FormLabel>
-                    <MentsuSelect {...{ fu, setFu, preSelectedMentsuFu: preSelectedMentsu0Fu }} />
-                    <MentsuSelect {...{ fu, setFu, preSelectedMentsuFu: preSelectedMentsu1Fu }} />
-                    <MentsuSelect {...{ fu, setFu, preSelectedMentsuFu: preSelectedMentsu2Fu }} />
-                    <MentsuSelect {...{ fu, setFu, preSelectedMentsuFu: preSelectedMentsu3Fu }} />
+                    <MentsuSelect {...{ fu, setFu }} />
+                    <MentsuSelect {...{ fu, setFu }} />
+                    <MentsuSelect {...{ fu, setFu }} />
+                    <MentsuSelect {...{ fu, setFu }} />
                 </Grid>
                 <Grid item display='flex' flexDirection='column' width={300}>
                     <FormLabel>雀頭</FormLabel>

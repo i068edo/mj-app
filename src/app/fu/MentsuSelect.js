@@ -12,22 +12,18 @@ export default function MentsuSelect( props ) {
     const mentsuList = ['シュンツ', '2〜8のポン', '2〜8のアンコー',
     '1・9、字牌のポン', '1・9、字牌のアンコー',
     '2〜8の明カン', '2〜8の暗カン', '1・9、字牌の明カン', '1・9、字牌の暗カン'];
-    let preSelectedFu = props.preSelectedFu;
     
     const mentsuSelect = (event) => {
-        console.log(preSelectedFu);
         const thisValue = event.target.value;
+        const preSelectedMentsu = selectedMentsu;
         setSelectedMentsu(thisValue);
         
-        if( preSelectedFu > 0 ){
-            setFu(fu => fu + mentsuObj[thisValue] - preSelectedFu);
-        }else{
-            setFu(fu => fu + mentsuObj[thisValue]);
+        if( preSelectedMentsu == undefined ){
+            setFu( fu => fu + mentsuObj[thisValue] );
+        }else if(  !( thisValue == preSelectedMentsu ) ){
+
+            setFu( fu => fu + mentsuObj[thisValue] - mentsuObj[preSelectedMentsu] );
         }
-        console.log('hoge');
-        preSelectedFu = mentsuObj[thisValue];
-        
-        console.log(preSelectedFu);
     }; 
     
     return (
