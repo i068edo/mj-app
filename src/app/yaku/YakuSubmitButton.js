@@ -80,6 +80,36 @@ export default function YakuSubmitButton( props ){
         }
     }
 
+    function roundUp10(num){
+        return Math.ceil(num / 100) * 100;      
+    }
+
+    function calculatePinfu(){
+        if( menzenFuuro=='門前' && tsumoRon=='ロン' ){
+            basicPoint = 120;
+        }else{
+            basicPoint = 80;
+        }
+
+        for ( let i = 0; i < han; i++ ){
+            basicPoint *= 2;
+        }
+
+        if( oyaKo=='親' ){
+            if( tsumoRon=='ツモ'){
+                setTotalPoint( roundUp10(basicPoint*2) );
+            }else{
+                setTotalPoint( roundUp10(basicPoint*6) );
+            }
+        }else{
+            if( tsumoRon=='ツモ'){
+                setTotalPoint( roundUp10(basicPoint) + '・' + roundUp10(basicPoint*2) );
+            }else{
+                setTotalPoint( roundUp10(basicPoint*4) );
+            }
+        }
+    }
+
     function calculateBranch(){
         if( yakuman > 0 ){
             if( oyaKo == '親' ){
@@ -94,7 +124,7 @@ export default function YakuSubmitButton( props ){
         }else if( isChiitoitsu ){
             calculateChiitoitsu();
         }else if( isPinfu ){
-            if( oyaKo == '親' ){
+            /* if( oyaKo == '親' ){
                 if( tsumoRon == 'ロン'){
                     calculatePinfuRonOya()
                 }else{
@@ -104,7 +134,8 @@ export default function YakuSubmitButton( props ){
                 calculatePinfuRonKo();
             }else{
                 calculatePinfuTsumoKo();
-            }
+            } */
+            calculatePinfu();
         }else{
             initFu();
         }
@@ -205,7 +236,7 @@ export default function YakuSubmitButton( props ){
         }
     }
 
-    function calculatePinfuTsumoOya(){
+    /* function calculatePinfuTsumoOya(){
         if( han == 2 ){
             setTotalPoint(2100);
         }else if( han == 3 ){
@@ -247,7 +278,7 @@ export default function YakuSubmitButton( props ){
         }else if( han == 4 ){
             setTotalPoint(7700);
         }
-    }
+    } */
 
     function initFu(){
         setFu(20);
