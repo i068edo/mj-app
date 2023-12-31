@@ -58,9 +58,17 @@ export default function FuSubmitButton( props ){
     function calculateManganPoint(){
         setNaniman('満貫');
         if( oyaKo=='親' ){
-            setTotalPoint(12000);
+            if( tsumoRon=='ツモ' ){
+                setTotalPoint(4000);
+            }else{
+                setTotalPoint(12000);
+            }
         }else{
-            setTotalPoint(8000);
+            if( tsumoRon=='ツモ' ){
+                setTotalPoint(2000 + '・' + 4000);
+            }else{
+                setTotalPoint(8000);
+            }
         }
     }
 
