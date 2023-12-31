@@ -49,7 +49,7 @@ export default function FuSubmitButton( props ){
             }
         }else{
             if( tsumoRon == 'ツモ' ){
-                setTotalPoint( roundUp10(basicPoint) + '・' + roundUp10(basicPoint*2) );
+                setTotalPoint( roundUp10(basicPoint) + '/' + roundUp10(basicPoint*2) );
             }else{
                 setTotalPoint(roundUp10(basicPoint*4));
             }
@@ -66,7 +66,7 @@ export default function FuSubmitButton( props ){
             }
         }else{
             if( tsumoRon=='ツモ' ){
-                setTotalPoint(2000 + '・' + 4000);
+                setTotalPoint(2000 + '/' + 4000);
             }else{
                 setTotalPoint(8000);
             }

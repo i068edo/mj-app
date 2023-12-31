@@ -41,11 +41,11 @@ export default function ResultField(props) {
                         </div>
 
                         <Box display='flex' flexDirection='column' sx={{ m: 1 }}>
-                            <Box display='flex' flexDirection='row' alignItems='center' sx={{ ml: 3 }}>
+                            <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' sx={{ ml: 3 }}>
                                 <Typography gutterBottom variant="h4" >{naniman}</Typography>
                                 <Typography gutterBottom variant="subtitle" color={grey[700]} sx={{ m: 1 }}>{oyaKo}の{tsumoRon}アガリ</Typography>
                             </Box>
-                            <Box display='flex' flexDirection='row' alignItems='center' >
+                            <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' >
                                 <Typography gutterBottom variant="h2" >{totalPoint}</Typography>
                                 { isAll && 
                                     <Typography gutterBottom variant="h4" sx={{ ml: 1 }} >オール</Typography>
