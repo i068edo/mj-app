@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
-import { teal ,grey, red } from '@mui/material/colors';
+import { teal ,grey, deepOrange } from '@mui/material/colors';
 
 export default function YakuResult( props ) {
     const { han, yakuman, yakuList } = props;
@@ -31,7 +31,7 @@ export default function YakuResult( props ) {
                 backgroundColor: grey[200],
                 border: 5,
                 borderRadius: 6,
-                borderColor: red[500],
+                borderColor: deepOrange[500],
                 p: 2,
                 fontSize: '2rem',
                 whiteSpace: 'nowrap'

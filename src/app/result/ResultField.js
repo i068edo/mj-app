@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import { EditNote } from '@mui/icons-material';
 import { grey } from '@mui/material/colors';
+import Grid from '@mui/material/Grid';
 
 export default function ResultField(props) {
     const { oyaKo, tsumoRon,  han, fu,  yakuList, totalPoint, isAll, naniman } = props;
@@ -40,13 +41,15 @@ export default function ResultField(props) {
                         </div>
 
                         <Box display='flex' flexDirection='column' sx={{ m: 1 }}>
-                            <Box display='flex' flexDirection='row' alignItems='center' sx={{ m: 1 }}>
+                            <Box display='flex' flexDirection='row' alignItems='center' sx={{ ml: 3 }}>
                                 <Typography gutterBottom variant="h4" >{naniman}</Typography>
                                 <Typography gutterBottom variant="subtitle" color={grey[700]} sx={{ m: 1 }}>{oyaKo}の{tsumoRon}アガリ</Typography>
                             </Box>
                             <Box display='flex' flexDirection='row' alignItems='center' >
-                                <Typography gutterBottom variant="h1" >{totalPoint}</Typography>
-                                { isAll && <Typography gutterBottom variant="h3" sx={{ ml:2 }} >オール</Typography> }
+                                <Typography gutterBottom variant="h2" >{totalPoint}</Typography>
+                                { isAll && 
+                                    <Typography gutterBottom variant="h4" sx={{ ml: 1 }} >オール</Typography>
+                                }    
                             </Box>
                         </Box>
 
