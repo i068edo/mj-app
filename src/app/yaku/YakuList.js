@@ -14,7 +14,7 @@ export default function YakuList(props) {
 
 
   return (
-    <div>
+    <Box sx={{ml:1}}>
       <Box sx={{ flexGrow: 1 }}>
         <nav aria-label="一飜">
           <Typography gutterBottom variant="h5" component="div" color={green[400]} >一飜役</Typography>
@@ -93,6 +93,6 @@ export default function YakuList(props) {
         </nav>
       </Box>
 
-    </div>
+    </Box>
   );
 }
