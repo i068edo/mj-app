@@ -8,7 +8,7 @@ export default function YakuResult( props ) {
     
 
     return (
-        <Box display='flex'  sx={{ position: "sticky", bottom: 0 }}>
+        <Box display='flex'  sx={{ position: "sticky", bottom: 0, pb: 1 }}>
 
             <Box sx={{
                 backgroundColor: grey[200],

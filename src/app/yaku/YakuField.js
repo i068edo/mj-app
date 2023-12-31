@@ -26,7 +26,7 @@ export default function YakuField( props ){
     
     return(
         <Box sx={{mt:1, ml:1}}>
-            <Box display='flex' flexWrap='wrap' gap='1rem' sx={{mb:1}}>
+            <Box display='flex' flexWrap='wrap' gap='1rem' sx={{mb:1, ml: 1}}>
                 <OyaKoRadioGroup {...{ oyaKo, setOyaKo, 
                     oyaKoRadioGroupError, setOyaKoRadioGroupError }}/>
                 <MenzenFuuroRadioGroup {...{ menzenFuuro, setMenzenFuuro,
@@ -34,7 +34,7 @@ export default function YakuField( props ){
                 <TsumoRonRadioGroup {...{ tsumoRon, setTsumoRon,
                     tsumoRonRadioGroupError, setTsumoRonRadioGroupError }}/>
                 <DoraCount {...{ han, setHan, yakuList, setYakuList, dora, setDora, }}/>
-            </Box> 
+            
             
             <YakuSubmitButton  {...{ visibleYakuField, setVisibleYakuField,
                   visibleFuField, setVisibleFuField, visibleResultField,
@@ -48,6 +48,9 @@ export default function YakuField( props ){
                   setMenzenFuuroRadioGroupError,
                   setTsumoRonRadioGroupError }}/>
 
+            </Box> 
+
+            
             <YakuList {...{ han, setHan, yakuList, setYakuList, yakuman, setYakuman,
                 yakuNameList1, yakuNameList2, yakuNameList3, yakuNameList6, 
                 yakumanNameList,  yakumanNameList2,

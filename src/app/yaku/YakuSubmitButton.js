@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import CalculateIcon from '@mui/icons-material/Calculate';
+import Box from '@mui/material/Box';
 
 export default function YakuSubmitButton( props ){
     const { setVisibleYakuField, setVisibleFuField, setVisibleResultField, 
@@ -158,8 +159,11 @@ export default function YakuSubmitButton( props ){
 
     return(
         <div>
-            <Button variant='contained' sx={{ mt: 1, mb: 3 }} onClick={yakuSubmitClick}>
-                <span>計算する</span><CalculateIcon sx={{ml: 1}}/>
+            <Button variant='contained' sx={{ mt: 1, mb: 3, ml: 1 }} onClick={yakuSubmitClick}>
+                <Box display='flex' flexDirection='column'>
+                    <CalculateIcon sx={{ width: '4rem', height: '4rem' }}/>
+                    <div>計算する</div>
+                </Box>
             </Button>
         </div>
     )
