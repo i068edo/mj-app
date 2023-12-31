@@ -60,6 +60,26 @@ export default function YakuSubmitButton( props ){
         }
     }
 
+    function calculateChiitoitsu(){
+        basicPoint = 100;
+        for ( let i = 0; i < han; i++ ){
+            basicPoint *= 2;
+        }
+        if( oyaKo=='親' ){
+            if( tsumoRon=='ツモ'){
+                setTotalPoint( basicPoint*2 );
+            }else{
+                setTotalPoint( basicPoint*6 );
+            }
+        }else{
+            if( tsumoRon=='ツモ'){
+                setTotalPoint( basicPoint + '・' + basicPoint*2 );
+            }else{
+                setTotalPoint( basicPoint*4 );
+            }
+        }
+    }
+
     function calculateBranch(){
         if( yakuman > 0 ){
             if( oyaKo == '親' ){
@@ -72,13 +92,7 @@ export default function YakuSubmitButton( props ){
         }else if( han >= 5 ){
             calculatePointOverMangan();
         }else if( isChiitoitsu ){
-            if( oyaKo == '親' ){
-                calculateChiitoitsuOya();
-            }else if( tsumoRon == 'ロン' ){
-                calculateChiitoitsuRonKo();
-            }else{
-                calculateChiitoitsuTsumoKo();
-            }
+            calculateChiitoitsu();
         }else if( isPinfu ){
             if( oyaKo == '親' ){
                 if( tsumoRon == 'ロン'){
@@ -188,36 +202,6 @@ export default function YakuSubmitButton( props ){
         }else if( yakuman >= 7 ){
             setTotalPoint(224000);
             setNaniman('七倍役満');
-        }
-    }
-
-    function calculateChiitoitsuOya(){
-        if( han == 2 ){
-            setTotalPoint(2400);
-        }else if( han == 3 ){
-            setTotalPoint(4800);
-        }else if( han == 4 ){
-            setTotalPoint(9600);
-        }
-    }
-
-    function calculateChiitoitsuTsumoKo(){
-        if( han == 2 ){
-            setTotalPoint(400+'・'+800);
-        }else if( han == 3 ){
-            setTotalPoint(800+'・'+1600);
-        }else if( han == 4 ){
-            setTotalPoint(1600+'・'+3200);
-        }
-    }
-
-    function calculateChiitoitsuRonKo(){
-        if( han == 2 ){
-            setTotalPoint(1600);
-        }else if( han == 3 ){
-            setTotalPoint(3200);
-        }else if( han == 4 ){
-            setTotalPoint(6400);
         }
     }
 
