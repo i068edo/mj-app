@@ -26,6 +26,40 @@ export default function YakuSubmitButton( props ){
         }
     }
 
+    let basicPoint;    
+    function calculatePointOverMangan(){
+        if( han <= 5 ){
+            basicPoint = 2000;
+            setNaniman('満貫');
+        }else if( han <= 7 ){
+            basicPoint = 3000;
+            setNaniman('跳満');
+        }else if( han <= 10 ){
+            basicPoint = 4000;
+            setNaniman('倍満');
+        }else if( han <= 12 ){
+            basicPoint = 6000;
+            setNaniman('三倍満');
+        }else if( han >= 13 ){
+            basicPoint = 8000;
+            setNaniman('数え役満');
+        }
+
+        if( oyaKo=='親' ){
+            if( tsumoRon=='ツモ'){
+                setTotalPoint( basicPoint*2 );
+            }else{
+                setTotalPoint( basicPoint*6 );
+            }
+        }else{
+            if( tsumoRon=='ツモ'){
+                setTotalPoint( basicPoint + '・' + basicPoint*2 );
+            }else{
+                setTotalPoint( basicPoint*4 );
+            }
+        }
+    }
+
     function calculateBranch(){
         if( yakuman > 0 ){
             if( oyaKo == '親' ){
@@ -36,13 +70,7 @@ export default function YakuSubmitButton( props ){
                 calculateYakumanTsumoKo();
             }
         }else if( han >= 5 ){
-            if( oyaKo == '親' ){
-                calculateOver4hanOya();
-            }else if( tsumoRon == 'ロン' ){
-                calculateOver4hanRonKo();
-            }else{
-                calculateOver4hanTsumoKo();
-            }
+            calculatePointOverMangan();
         }else if( isChiitoitsu ){
             if( oyaKo == '親' ){
                 calculateChiitoitsuOya();
@@ -86,63 +114,6 @@ export default function YakuSubmitButton( props ){
 
         filedControleFromYaku();
         calculateBranch();
-    }
-
-    function calculateOver4hanOya(){
-        if( han <= 5 ){
-            setTotalPoint(12000);
-            setNaniman('満貫');
-        }else if( han <= 7 ){
-            setTotalPoint(18000);
-            setNaniman('跳満');
-        }else if( han <= 10 ){
-            setTotalPoint(24000);
-            setNaniman('倍満');
-        }else if( han <= 12 ){
-            setTotalPoint(36000);
-            setNaniman('三倍満');
-        }else if( han >= 13 ){
-            setTotalPoint(48000);
-            setNaniman('数え役満');
-        }
-    }
-
-    function calculateOver4hanTsumoKo(){
-        if( han <= 5 ){
-            setTotalPoint(2000+'・'+4000);
-            setNaniman('満貫');
-        }else if( han <= 7 ){
-            setTotalPoint(3000+'・'+6000);
-            setNaniman('跳満');
-        }else if( han <= 10 ){
-            setTotalPoint(4000+'・'+8000);
-            setNaniman('倍満');
-        }else if( han <= 12 ){
-            setTotalPoint(6000+'・'+12000);
-            setNaniman('三倍満');
-        }else if( han >= 13 ){
-            setTotalPoint(8000+'・'+16000);
-            setNaniman('数え役満');
-        }
-    }
-
-    function calculateOver4hanRonKo(){
-        if( han <= 5 ){
-            setTotalPoint(8000);
-            setNaniman('満貫');
-        }else if( han <= 7 ){
-            setTotalPoint(12000);
-            setNaniman('跳満');
-        }else if( han <= 10 ){
-            setTotalPoint(16000);
-            setNaniman('倍満');
-        }else if( han <= 12 ){
-            setTotalPoint(24000);
-            setNaniman('三倍満');
-        }else if( han >= 13 ){
-            setTotalPoint(32000);
-            setNaniman('数え役満');
-        }
     }
 
     function calculateYakumanOya(){
