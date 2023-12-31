@@ -22,6 +22,7 @@ function ParentField(props) {
   const [fu, setFu] = useState();
   const [dora, setDora] = useState();
   const [totalPoint, setTotalPoint] = useState(0);
+  const [isAll, setIsAll] = useState(false);
   const [isChiitoitsu, setIsChiitoitsu] = useState(false);
   const [isPinfu, setIsPinfu] = useState(false);
   const [yakuList, setYakuList] = useState([]);
@@ -65,7 +66,7 @@ function ParentField(props) {
            tsumoRon,  setTsumoRon,  han,  setHan,  yakuList,  setYakuList,
            yakuNameList1,  yakuNameList2,  yakuNameList3,
            yakuNameList6, yakumanNameList, yakumanNameList2,
-          totalPoint, setTotalPoint, dora, setDora, yakuman, setYakuman,
+          totalPoint, setTotalPoint, isAll, setIsAll, dora, setDora, yakuman, setYakuman,
           isPinfu, setIsPinfu, isChiitoitsu, setIsChiitoitsu, setNaniman, fu, setFu
         }} />
       }
@@ -77,7 +78,7 @@ function ParentField(props) {
       }
       {visibleResultField &&
         <ResultField  {...{
-          oyaKo, tsumoRon, han, yakuList, totalPoint, yakuman, fu, naniman
+          oyaKo, tsumoRon, han, yakuList, totalPoint, isAll, yakuman, fu, naniman
         }} />
       }
     </div>

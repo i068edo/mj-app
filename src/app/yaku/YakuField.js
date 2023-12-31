@@ -17,7 +17,7 @@ export default function YakuField( props ){
             oyaKo, setOyaKo, menzenFuuro, setMenzenFuuro, tsumoRon, setTsumoRon,
             han, setHan, fu, setFu, yakuList, setYakuList, yakuNameList1,
             yakuNameList2, yakuNameList3, yakuNameList6,
-            yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, dora, setDora,
+            yakumanNameList, yakumanNameList2, totalPoint, setTotalPoint, isAll, setIsAll, dora, setDora,
             yakuman, setYakuman, isPinfu, setIsPinfu, isChiitoitsu, setIsChiitoitsu, setNaniman} = props;
     const [oyaKoRadioGroupError, setOyaKoRadioGroupError] = useState(false);
     const [menzenFuuroRadioGroupError, setMenzenFuuroRadioGroupError] = useState(false);
@@ -42,7 +42,7 @@ export default function YakuField( props ){
                   tsumoRon, setTsumoRon, han, setHan, fu, setFu, yakuList, setYakuList, 
                   yakuNameList1, yakuNameList2, yakuNameList3,
                   yakuNameList6, yakumanNameList, yakumanNameList2,
-                  totalPoint, setTotalPoint, dora, yakuman, setYakuman,
+                  totalPoint, setTotalPoint, setIsAll, dora, yakuman, setYakuman,
                   isPinfu, isChiitoitsu, setNaniman,
                   setOyaKoRadioGroupError,
                   setMenzenFuuroRadioGroupError,

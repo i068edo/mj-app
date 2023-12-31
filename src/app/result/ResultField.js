@@ -11,7 +11,7 @@ import { EditNote } from '@mui/icons-material';
 import { grey } from '@mui/material/colors';
 
 export default function ResultField(props) {
-    const { oyaKo, tsumoRon,  han, fu,  yakuList, totalPoint, naniman } = props;
+    const { oyaKo, tsumoRon,  han, fu,  yakuList, totalPoint, isAll, naniman } = props;
 
     function backButtonClick() {
         window.location.reload();
@@ -44,7 +44,10 @@ export default function ResultField(props) {
                                 <Typography gutterBottom variant="h4" >{naniman}</Typography>
                                 <Typography gutterBottom variant="subtitle" color={grey[700]} sx={{ m: 1 }}>{oyaKo}の{tsumoRon}アガリ</Typography>
                             </Box>
-                            <Typography gutterBottom variant="h1" >{totalPoint}</Typography>
+                            <Box display='flex' flexDirection='row' alignItems='center' >
+                                <Typography gutterBottom variant="h1" >{totalPoint}</Typography>
+                                { isAll && <Typography gutterBottom variant="h3" sx={{ ml:2 }} >オール</Typography> }
+                            </Box>
                         </Box>
 
                     </Stack>

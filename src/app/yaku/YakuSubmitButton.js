@@ -4,13 +4,14 @@ import Button from '@mui/material/Button';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import Box from '@mui/material/Box';
+import { amber } from '@mui/material/colors';
 
 import { useReducer } from 'react';
 
 
 export default function YakuSubmitButton( props ){
     const { setVisibleYakuField, setVisibleFuField, setVisibleResultField, 
-            oyaKo, menzenFuuro, tsumoRon, han, setFu, setTotalPoint, 
+            oyaKo, menzenFuuro, tsumoRon, han, setFu, setTotalPoint, setIsAll,
             yakuman, isChiitoitsu, isPinfu, setNaniman, 
             setOyaKoRadioGroupError,
             setMenzenFuuroRadioGroupError,
@@ -78,6 +79,11 @@ export default function YakuSubmitButton( props ){
             setTsumoRonRadioGroupError(true);
             return 1;
         }
+
+        if( oyaKo=='親' && tsumoRon=='ツモ' ){
+            setIsAll(true);
+        }
+
         filedControleFromYaku();
         calculateBranch();
     }
