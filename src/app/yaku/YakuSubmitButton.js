@@ -21,6 +21,22 @@ export default function YakuSubmitButton( props ){
         }
     }
 
+    function branchCalculateOyaKoTsumoRon(){
+        if( oyaKo=='親' ){
+            if( tsumoRon=='ツモ'){
+                setTotalPoint( basicPoint*2 );
+            }else{
+                setTotalPoint( basicPoint*6 );
+            }
+        }else{
+            if( tsumoRon=='ツモ'){
+                setTotalPoint( basicPoint + '・' + basicPoint*2 );
+            }else{
+                setTotalPoint( basicPoint*4 );
+            }
+        }
+    }
+
     let basicPoint;    
     function calculatePointOverMangan(){
         if( han <= 5 ){
@@ -40,19 +56,7 @@ export default function YakuSubmitButton( props ){
             setNaniman('数え役満');
         }
 
-        if( oyaKo=='親' ){
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( basicPoint*2 );
-            }else{
-                setTotalPoint( basicPoint*6 );
-            }
-        }else{
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( basicPoint + '・' + basicPoint*2 );
-            }else{
-                setTotalPoint( basicPoint*4 );
-            }
-        }
+        branchCalculateOyaKoTsumoRon();
     }
 
     function calculateYakuman(){
@@ -65,19 +69,8 @@ export default function YakuSubmitButton( props ){
         }else{
             setNaniman( yakuman + '倍役満' );
         }
-        if( oyaKo=='親' ){
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( basicPoint*2 );
-            }else{
-                setTotalPoint( basicPoint*6 );
-            }
-        }else{
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( basicPoint + '・' + basicPoint*2 );
-            }else{
-                setTotalPoint( basicPoint*4 );
-            }
-        }
+
+        branchCalculateOyaKoTsumoRon();
     }
 
     function calculateChiitoitsu(){
@@ -85,19 +78,8 @@ export default function YakuSubmitButton( props ){
         for ( let i = 0; i < han; i++ ){
             basicPoint *= 2;
         }
-        if( oyaKo=='親' ){
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( basicPoint*2 );
-            }else{
-                setTotalPoint( basicPoint*6 );
-            }
-        }else{
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( basicPoint + '・' + basicPoint*2 );
-            }else{
-                setTotalPoint( basicPoint*4 );
-            }
-        }
+
+        branchCalculateOyaKoTsumoRon();
     }
 
     function roundUp10(num){
