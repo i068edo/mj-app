@@ -79,6 +79,7 @@ export default function YakuSubmitButton( props ){
         for ( let i = 0; i < han; i++ ){
             basicPoint *= 2;
         }
+        setFu(25);
 
         branchCalculateOyaKoTsumoRon();
     }
@@ -90,8 +91,10 @@ export default function YakuSubmitButton( props ){
     function calculatePinfu(){
         if( menzenFuuro=='門前' && tsumoRon=='ロン' ){
             basicPoint = 120;
+            setFu(30);
         }else{
             basicPoint = 80;
+            setFu(20);
         }
 
         for ( let i = 0; i < han; i++ ){
