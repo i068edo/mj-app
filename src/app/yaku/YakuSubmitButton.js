@@ -5,54 +5,58 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import Box from '@mui/material/Box';
 
-export default function YakuSubmitButton( props ){
-    const { setVisibleYakuField, setVisibleFuField, setVisibleResultField, 
-            oyaKo, menzenFuuro, tsumoRon, han, setFu, setTotalPoint, setIsAll,
-            yakuman, isChiitoitsu, isPinfu, setNaniman, 
-            setOyaKoRadioGroupError,
-            setMenzenFuuroRadioGroupError,
-            setTsumoRonRadioGroupError } = props;
+export default function YakuSubmitButton(props) {
+    const { setVisibleYakuField, setVisibleFuField, setVisibleResultField,
+        oyaKo, menzenFuuro, tsumoRon, han, setFu, setTotalPoint, setIsAll,
+        yakuman, isChiitoitsu, isPinfu, setNaniman,
+        setOyaKoRadioGroupError,
+        setMenzenFuuroRadioGroupError,
+        setTsumoRonRadioGroupError } = props;
 
-    function filedControleFromYaku(){
+    function filedControleFromYaku() {
         setVisibleYakuField(false);
-        if( yakuman > 0 || isChiitoitsu || isPinfu || han >= 5 ){
+        if (yakuman > 0 || isChiitoitsu || isPinfu || han >= 5) {
             setVisibleResultField(true);
-        }else{
-            setVisibleFuField(true);    
+        } else {
+            setVisibleFuField(true);
         }
     }
 
-    function branchCalculateOyaKoTsumoRon(){
-        if( oyaKo=='親' ){
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( basicPoint*2 );
-            }else{
-                setTotalPoint( basicPoint*6 );
+    function roundUp10(num) {
+        return Math.ceil(num / 100) * 100;
+    }
+
+    function branchCalculateOyaKoTsumoRon() {
+        if (oyaKo == '親') {
+            if (tsumoRon == 'ツモ') {
+                setTotalPoint(roundUp10(basicPoint * 2));
+            } else {
+                setTotalPoint(roundUp10(basicPoint * 6));
             }
-        }else{
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( basicPoint + '/' + basicPoint*2 );
-            }else{
-                setTotalPoint( basicPoint*4 );
+        } else {
+            if (tsumoRon == 'ツモ') {
+                setTotalPoint(roundUp10(basicPoint) + '/' + roundUp10(basicPoint * 2));
+            } else {
+                setTotalPoint(roundUp10(basicPoint * 4));
             }
         }
     }
 
-    let basicPoint;    
-    function calculatePointOverMangan(){
-        if( han <= 5 ){
+    let basicPoint;
+    function calculatePointOverMangan() {
+        if (han <= 5) {
             basicPoint = 2000;
             setNaniman('満貫');
-        }else if( han <= 7 ){
+        } else if (han <= 7) {
             basicPoint = 3000;
             setNaniman('跳満');
-        }else if( han <= 10 ){
+        } else if (han <= 10) {
             basicPoint = 4000;
             setNaniman('倍満');
-        }else if( han <= 12 ){
+        } else if (han <= 12) {
             basicPoint = 6000;
             setNaniman('三倍満');
-        }else if( han >= 13 ){
+        } else if (han >= 13) {
             basicPoint = 8000;
             setNaniman('数え役満');
         }
@@ -60,23 +64,23 @@ export default function YakuSubmitButton( props ){
         branchCalculateOyaKoTsumoRon();
     }
 
-    function calculateYakuman(){
+    function calculateYakuman() {
         basicPoint = 4000;
-        for ( let i = 0; i < yakuman; i++ ){
+        for (let i = 0; i < yakuman; i++) {
             basicPoint *= 2;
         }
-        if( yakuman == 1 ){
+        if (yakuman == 1) {
             setNaniman('役満');
-        }else{
-            setNaniman( yakuman + '倍役満' );
+        } else {
+            setNaniman(yakuman + '倍役満');
         }
 
         branchCalculateOyaKoTsumoRon();
     }
 
-    function calculateChiitoitsu(){
+    function calculateChiitoitsu() {
         basicPoint = 100;
-        for ( let i = 0; i < han; i++ ){
+        for (let i = 0; i < han; i++) {
             basicPoint *= 2;
         }
         setFu(25);
@@ -84,65 +88,59 @@ export default function YakuSubmitButton( props ){
         branchCalculateOyaKoTsumoRon();
     }
 
-    function roundUp10(num){
-        return Math.ceil(num / 100) * 100;      
-    }
-
-    function calculatePinfu(){
-        if( menzenFuuro=='門前' && tsumoRon=='ロン' ){
+    function calculatePinfu() {
+        if (menzenFuuro == '門前' && tsumoRon == 'ロン') {
             basicPoint = 120;
             setFu(30);
-        }else{
+        } else {
             basicPoint = 80;
             setFu(20);
         }
 
-        for ( let i = 0; i < han; i++ ){
+        for (let i = 0; i < han; i++) {
             basicPoint *= 2;
         }
 
-        if( oyaKo=='親' ){
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( roundUp10(basicPoint*2) );
-            }else{
-                setTotalPoint( roundUp10(basicPoint*6) );
-            }
-        }else{
-            if( tsumoRon=='ツモ'){
-                setTotalPoint( roundUp10(basicPoint) + '/' + roundUp10(basicPoint*2) );
-            }else{
-                setTotalPoint( roundUp10(basicPoint*4) );
-            }
-        }
+        branchCalculateOyaKoTsumoRon();
     }
 
-    function calculateBranch(){
-        if( yakuman > 0 ){
+    function calculateBranch() {
+        if (yakuman > 0) {
             calculateYakuman();
-        }else if( han >= 5 ){
+        } else if (han >= 5) {
             calculatePointOverMangan();
-        }else if( isChiitoitsu ){
+        } else if (isChiitoitsu) {
             calculateChiitoitsu();
-        }else if( isPinfu ){
+        } else if (isPinfu) {
             calculatePinfu();
-        }else{
+        } else {
             initFu();
         }
     }
 
-    function yakuSubmitClick(){
-        if(oyaKo==''){
+    function windowScrollTop(){
+        window.scroll({
+            top: 0,
+            behavior: "smooth",
+          });
+    }
+
+    function yakuSubmitClick() {
+        if (oyaKo == '') {
             setOyaKoRadioGroupError(true);
+            windowScrollTop();
             return 1;
-        }else if(menzenFuuro==''){
+        } else if (menzenFuuro == '') {
             setMenzenFuuroRadioGroupError(true);
+            windowScrollTop();
             return 1;
-        }else if(tsumoRon==''){
+        } else if (tsumoRon == '') {
             setTsumoRonRadioGroupError(true);
+            windowScrollTop();
             return 1;
         }
 
-        if( oyaKo=='親' && tsumoRon=='ツモ' ){
+        if (oyaKo == '親' && tsumoRon == 'ツモ') {
             setIsAll(true);
         }
 
@@ -150,24 +148,30 @@ export default function YakuSubmitButton( props ){
         calculateBranch();
     }
 
-    function initFu(){
+    function initFu() {
         setFu(20);
-        if( tsumoRon == 'ツモ' ){
+        if (tsumoRon == 'ツモ') {
             setFu(fu => fu + 2);
-        }else if( menzenFuuro == '門前' ){
+        } else if (menzenFuuro == '門前') {
             setFu(fu => fu + 10);
         }
     }
 
 
-    return(
-        <div>
+    return (
+        <Box position='fixed' right='1rem'
+            sx={{
+                "@media screen and (max-width:720px)": {
+                    position: "static",
+                },
+            }}
+        >
             <Button variant='contained' sx={{ mt: 1, mb: 3, ml: 1 }} onClick={yakuSubmitClick}>
                 <Box display='flex' flexDirection='column'>
-                    <CalculateIcon sx={{ width: '4rem', height: '4rem' }}/>
+                    <CalculateIcon sx={{ width: '4rem', height: '4rem' }} />
                     <div>計算する</div>
                 </Box>
             </Button>
-        </div>
+        </Box>
     )
 }
