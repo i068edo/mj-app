@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import RuleBook from './RuleBook';
+import AppInfo from './AppInfo';
 
 
 const style = {
@@ -18,20 +18,20 @@ const style = {
   overflowY: 'auto',
 };
 
-export default function QuestionModal(props) {
-  const { questionModalOpen, handleOpenQuestionModal, handleCloseQuestionModal } = props;
+export default function InfoModal(props) {
+  const { infoModalOpen, handleCloseInfoModal } = props;
 
   return (
     <div>
       <Modal
-        open={questionModalOpen}
-        onClose={handleCloseQuestionModal}
+        open={infoModalOpen}
+        onClose={handleCloseInfoModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         
       >
         <Box sx={style} width='70vw' height='70vh'>
-          <RuleBook />
+          <AppInfo />
         </Box>
       </Modal>
     </div>

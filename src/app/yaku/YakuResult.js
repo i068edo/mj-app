@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
-import { teal ,grey, deepOrange } from '@mui/material/colors';
 import { useTheme } from '@mui/material/styles';
 
 export default function YakuResult( props ) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RolesList() {
+function RuleBook() {
   return (
     <div>
 
@@ -204,4 +204,4 @@ function RolesList() {
   );
 }
 
-export default RolesList;
+export default RuleBook;

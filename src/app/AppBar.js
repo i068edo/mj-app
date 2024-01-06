@@ -8,36 +8,54 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import QuestionMarkRoundedIcon from '@mui/icons-material/QuestionMarkRounded';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { yellow, lime, green } from '@mui/material/colors';
 import QuestionModal from './QuestionModal';
+import InfoModal from './InfoModal';
 
 
 export default function ButtonAppBar() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const handleOpen = () => setModalOpen(true);
-  const handleClose = () => setModalOpen(false);
+  const [questionModalOpen, setQuestionModalOpen] = useState(false);
+  const handleOpenQuestionModal = () => setQuestionModalOpen(true);
+  const handleCloseQuestionModal = () => setQuestionModalOpen(false);
+
+  const [infoModalOpen, setinfoModalOpen] = useState(false);
+  const handleOpenInfoModal = () => setinfoModalOpen(true);
+  const handleCloseInfoModal = () => setinfoModalOpen(false);
+  
   function backButtonClick() {
     window.location.reload();
   }
+
   return (
     <Box sx={{ flexGrow: 1, mb: 10 }} >
+
       <AppBar position='fixed' color='primary' enableColorOnDark >
+        <Box display='flex' justifyContent='space-between' sx={{ ml: 2, mr: 2 }}>
 
-        <Box display='flex' justifyContent='space-between' sx={{ml:2, mr: 2}}>
+          <div>
 
-          <Button onClick={backButtonClick}>
-            <Typography variant="h6" component="div" color='font'>
-              まーじゃんけいさん
-            </Typography>
-          </Button>
+            <IconButton onClick={handleOpenInfoModal}>
+              <InfoOutlinedIcon fontSize="large" color='secondary' />
+            </IconButton>
 
-          <IconButton onClick={handleOpen}>
-            < QuestionMarkRoundedIcon fontSize="large" color='secondary' />
+            <Button onClick={backButtonClick}>
+              <Typography variant="h6" component="div" color='font'>
+                まーじゃんけいさん
+              </Typography>
+            </Button>
+
+          </div>
+
+          <IconButton onClick={handleOpenQuestionModal}>
+            <QuestionMarkRoundedIcon fontSize="large" color='secondary' />
           </IconButton>
 
         </Box>
 
-        <QuestionModal open={modalOpen} handleOpen={handleOpen} handleClose={handleClose} />
+        <InfoModal {...{ infoModalOpen, handleCloseInfoModal }} />
+        <QuestionModal {...{ questionModalOpen, handleOpenQuestionModal, handleCloseQuestionModal }} />
+        
 
       </AppBar>
     </Box>
