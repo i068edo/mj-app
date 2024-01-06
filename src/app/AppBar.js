@@ -21,18 +21,18 @@ export default function ButtonAppBar() {
   }
   return (
     <Box sx={{ flexGrow: 1, mb: 10 }} >
-      <AppBar position='fixed' color='info' enableColorOnDark >
+      <AppBar position='fixed' color='primary' enableColorOnDark >
 
         <Box display='flex' justifyContent='space-between' sx={{ml:2, mr: 2}}>
 
           <Button onClick={backButtonClick}>
-            <Typography variant="h6" component="div" color='white'>
+            <Typography variant="h6" component="div" color='font'>
               まーじゃんけいさん
             </Typography>
           </Button>
 
           <IconButton onClick={handleOpen}>
-            < QuestionMarkRoundedIcon fontSize="large" sx={{ color: yellow[500] }} />
+            < QuestionMarkRoundedIcon fontSize="large" color='secondary' />
           </IconButton>
 
         </Box>

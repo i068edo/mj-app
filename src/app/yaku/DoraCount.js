@@ -48,7 +48,7 @@ export default function DoraCount(props) {
         label="ドラの数"
         type="number"
         variant="outlined"
-        color="secondary"
+        color="primary"
         value={dora}
         onChange={updateDora}
         error={doraError}
@@ -56,7 +56,7 @@ export default function DoraCount(props) {
         sx={{ mt: 1, mb: 1 }}
       />
 
-      <ButtonGroup variant="outlined" color="secondary">
+      <ButtonGroup variant="outlined" color="primary">
         <Button onClick={confirmDora} >ドラの数を確定</Button>
         <Button onClick={deleteDora} >ドラの数を削除</Button>
       </ButtonGroup>

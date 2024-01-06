@@ -2,12 +2,33 @@
 import * as React from 'react';
 import { useState } from 'react';
 import {useReducer} from 'react'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import AppBar from './AppBar';
 import YakuField from './yaku/YakuField';
 import FuField from './fu/FuField';
 import ResultField from './result/ResultField';
 import { render } from 'react-dom';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#124116',
+      main: '#1b5e20',
+      dark: '#487e4c',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#af861f',
+      main: '#fbc02d',
+      dark: '#fbcc57',
+      contrastText: '#fff',
+    },
+    resultDisplay: '#eeeeee',
+    font: '#fff',
+    information: '#9e9e9e',
+  },
+});
 
 
 function ParentField(props) {
@@ -93,18 +114,18 @@ export default function Home() {
   const [visibleResultField, setVisibleResultField] = useState(false);
 
   return (
-    <main className="body">
-      <AppBar />
-
-      <ParentField {...{
-        visibleYakuField,
-        setVisibleYakuField,
-        visibleFuField,
-        setVisibleFuField,
-        visibleResultField,
-        setVisibleResultField
-      }}
-      />
-    </main>
+    <ThemeProvider theme={theme}>
+      <main className="body">
+        <AppBar />
+        <ParentField {...{
+          visibleYakuField,
+          setVisibleYakuField,
+          visibleFuField,
+          setVisibleFuField,
+          visibleResultField,
+          setVisibleResultField
+        }}/>
+      </main>
+    </ThemeProvider>   
   )
 }

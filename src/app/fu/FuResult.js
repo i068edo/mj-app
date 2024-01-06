@@ -1,19 +1,19 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { teal, grey } from '@mui/material/colors';
+import { useTheme } from '@mui/material/styles';
 
 export default function FuResult({ fu }) {
-
+    const theme = useTheme();
 
     return (
         
             <Box sx={{
                 minWidth: 75,
                 maxHeight: 50,
-                backgroundColor: grey[200],
+                backgroundColor: theme.palette.resultDisplay,
                 border: 5,
                 borderRadius: 6,
-                borderColor: teal[300],
+                borderColor: theme.palette.primary.main,
                 p: 2,
                 display: 'flex',
                 justifyContent: 'end',

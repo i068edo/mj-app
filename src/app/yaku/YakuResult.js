@@ -2,19 +2,21 @@ import * as React from 'react';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import { teal ,grey, deepOrange } from '@mui/material/colors';
+import { useTheme } from '@mui/material/styles';
 
 export default function YakuResult( props ) {
     const { han, yakuman, yakuList } = props;
+    const theme = useTheme();
     
 
     return (
         <Box display='flex'  sx={{ position: "sticky", bottom: 0, pb: 1 }}>
 
             <Box sx={{
-                backgroundColor: grey[200],
+                backgroundColor: theme.palette.resultDisplay,
                 border: 5,
                 borderRadius: 6,
-                borderColor: teal[300],
+                borderColor: theme.palette.primary.main,
                 p: 1,
                 mr: 1,
                 display: 'flex',
@@ -28,10 +30,10 @@ export default function YakuResult( props ) {
             
             { (yakuman > 0) && 
             <Box sx={{
-                backgroundColor: grey[200],
+                backgroundColor: theme.palette.resultDisplay,
                 border: 5,
                 borderRadius: 6,
-                borderColor: deepOrange[500],
+                borderColor: theme.palette.secondary.main,
                 p: 2,
                 fontSize: '2rem',
                 whiteSpace: 'nowrap'
@@ -42,10 +44,10 @@ export default function YakuResult( props ) {
 
             { (yakuman == 0) &&
             <Box sx={{
-                backgroundColor: grey[200],
+                backgroundColor: theme.palette.resultDisplay,
                 border: 5,
                 borderRadius: 6,
-                borderColor: teal[300],
+                borderColor: theme.palette.primary.main,
                 p: 2,
                 fontSize: '2rem',
                 whiteSpace: 'nowrap'
