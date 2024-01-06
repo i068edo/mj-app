@@ -10,10 +10,11 @@ import JantoSelect from './JantoSelect';
 import MachiSelect from './MachiSelect';
 import FuResult from './FuResult';
 import FuSubmitButton from './FuSubmitButton'
+import FuDetails from './FuDetails';
 
 export default function FuField(props) {
-    const { visibleFuField, setVisibleFuField, visibleResultField, setVisibleResultField,
-        fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, menzenFuuro, setNaniman } = props;
+    const { setVisibleFuField, setVisibleResultField,
+        fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, setNaniman } = props;
 
     function backButtonClick() {
         window.location.reload();
@@ -22,7 +23,7 @@ export default function FuField(props) {
     return (
         <Box sx={{ m: 2 }} maxWidth={600} >
             <Typography gutterBottom variant="h5" component="div">符計算が必要です。</Typography>
-            <Typography gutterBottom variant="body1" sx={{ mb: 3 }}>あてはまるものをリストから選んでください。</Typography>
+            <Typography gutterBottom variant="body1" sx={{ mb: 3 }}>あてはまるものをリストから選びましょう。</Typography>
 
             <Grid container spacing={2}>
                 <Grid item display='flex' flexDirection='column' width={300}>
@@ -40,15 +41,15 @@ export default function FuField(props) {
                 </Grid>
             </Grid>
 
-            <Box display='flex' alignItems='flex-end' justifyContent='space-between' sx={{ position: "sticky", bottom: 0 }}>
+            <FuDetails />
+
+            <Box display='flex' alignItems='flex-end' justifyContent='space-between' sx={{ position: "sticky", bottom: 0, pb: 1 }}>
                 <FuSubmitButton {...{
                     setVisibleFuField, setVisibleResultField,
                     fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, setNaniman
                 }} />
                 <FuResult {...{ fu }} />
             </Box>
-
-
 
         </Box>
     )

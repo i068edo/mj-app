@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 import { OyaKoRadioGroup } from './Radio';
 import { MenzenFuuroRadioGroup } from './Radio';
@@ -26,21 +27,39 @@ export default function YakuField(props) {
 
     return (
         <Box sx={{ mt: 1, ml: 1 }}>
-            <Box display='flex' flexWrap='wrap' gap='1rem' sx={{ mb: 1, ml: 1 }}>
-                <OyaKoRadioGroup {...{
-                    oyaKo, setOyaKo,
-                    oyaKoRadioGroupError, setOyaKoRadioGroupError
-                }} />
-                <MenzenFuuroRadioGroup {...{
-                    menzenFuuro, setMenzenFuuro,
-                    menzenFuuroRadioGroupError, setMenzenFuuroRadioGroupError
-                }} />
-                <TsumoRonRadioGroup {...{
-                    tsumoRon, setTsumoRon,
-                    tsumoRonRadioGroupError, setTsumoRonRadioGroupError
-                }} />
-                <DoraCount {...{ han, setHan, yakuList, setYakuList, dora, setDora, }} />
 
+            <Box display='flex' gap='1rem'
+                 sx={{
+                    "@media screen and (max-width:720px)": {
+                    display: "block",
+                },
+            }}>
+                <Box sx={{ mb: 3, ml: 1 }}>
+                    <Typography variant="h5" component="div" color='primary' fontWeight='bold'>あがり方</Typography>
+                    <Typography variant="body1" sx={{ mb: 3 }} color='information' >適当なものを選択しましょう。</Typography>
+
+                    <Box display='flex' flexWrap='wrap' gap='1rem'>
+                        <OyaKoRadioGroup {...{
+                            oyaKo, setOyaKo,
+                            oyaKoRadioGroupError, setOyaKoRadioGroupError
+                        }} />
+                        <MenzenFuuroRadioGroup {...{
+                            menzenFuuro, setMenzenFuuro,
+                            menzenFuuroRadioGroupError, setMenzenFuuroRadioGroupError
+                        }} />
+                        <TsumoRonRadioGroup {...{
+                            tsumoRon, setTsumoRon,
+                            tsumoRonRadioGroupError, setTsumoRonRadioGroupError
+                        }} />
+
+                    </Box>
+                </Box>
+
+                <Box sx={{ mb: 3, ml: 1 }}>
+                    <Typography variant="h5" component="div" color='primary' fontWeight='bold'>ドラの数</Typography>
+                    <Typography variant="body1" sx={{ mb: 1 }} color='information' >ドラの数を入力しましょう。</Typography>
+                    <DoraCount {...{ han, setHan, yakuList, setYakuList, dora, setDora, }} />
+                </Box>
 
                 <YakuSubmitButton  {...{
                     visibleYakuField, setVisibleYakuField,
@@ -55,9 +74,7 @@ export default function YakuField(props) {
                     setMenzenFuuroRadioGroupError,
                     setTsumoRonRadioGroupError
                 }} />
-
             </Box>
-
 
             <YakuList {...{
                 han, setHan, yakuList, setYakuList, yakuman, setYakuman,

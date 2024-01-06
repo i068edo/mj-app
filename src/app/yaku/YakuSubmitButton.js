@@ -126,17 +126,15 @@ export default function YakuSubmitButton(props) {
     }
 
     function yakuSubmitClick() {
+        windowScrollTop();
         if (oyaKo == '') {
             setOyaKoRadioGroupError(true);
-            windowScrollTop();
             return 1;
         } else if (menzenFuuro == '') {
             setMenzenFuuroRadioGroupError(true);
-            windowScrollTop();
             return 1;
         } else if (tsumoRon == '') {
             setTsumoRonRadioGroupError(true);
-            windowScrollTop();
             return 1;
         }
 
@@ -159,7 +157,7 @@ export default function YakuSubmitButton(props) {
 
 
     return (
-        <Box position='fixed' right='1rem'
+        <Box position='fixed' right='1rem' zIndex='100'
             sx={{
                 "@media screen and (max-width:720px)": {
                     position: "static",

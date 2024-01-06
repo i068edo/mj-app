@@ -22,9 +22,13 @@ export default function ButtonAppBar() {
   const [infoModalOpen, setinfoModalOpen] = useState(false);
   const handleOpenInfoModal = () => setinfoModalOpen(true);
   const handleCloseInfoModal = () => setinfoModalOpen(false);
-  
-  function backButtonClick() {
+
+  function resetButtonClick() {
     window.location.reload();
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   return (
@@ -39,7 +43,7 @@ export default function ButtonAppBar() {
               <InfoOutlinedIcon fontSize="large" color='secondary' />
             </IconButton>
 
-            <Button onClick={backButtonClick}>
+            <Button onClick={resetButtonClick}>
               <Typography variant="h6" component="div" color='font'>
                 まーじゃんけいさん
               </Typography>
@@ -55,7 +59,7 @@ export default function ButtonAppBar() {
 
         <InfoModal {...{ infoModalOpen, handleCloseInfoModal }} />
         <QuestionModal {...{ questionModalOpen, handleOpenQuestionModal, handleCloseQuestionModal }} />
-        
+
 
       </AppBar>
     </Box>

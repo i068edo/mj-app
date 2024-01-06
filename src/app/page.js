@@ -93,8 +93,8 @@ function ParentField(props) {
       }
       {visibleFuField &&
        <FuField {...{ 
-        visibleFuField, setVisibleFuField, visibleResultField, setVisibleResultField,
-        fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, menzenFuuro, setNaniman
+        setVisibleFuField, setVisibleResultField,
+        fu, setFu, han, tsumoRon, setTotalPoint, oyaKo, setNaniman
       }}/> 
       }
       {visibleResultField &&
