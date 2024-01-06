@@ -3,12 +3,15 @@ import * as React from 'react';
 import { useState } from 'react';
 import {useReducer} from 'react'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Noto_Serif_JP } from "next/font/google";
 
 import AppBar from './AppBar';
 import YakuField from './yaku/YakuField';
 import FuField from './fu/FuField';
 import ResultField from './result/ResultField';
 import { render } from 'react-dom';
+
+const NotoSerifJP = Noto_Serif_JP({ weight: "300", subsets: ["latin"] });
 
 const theme = createTheme({
   palette: {
@@ -27,6 +30,11 @@ const theme = createTheme({
     resultDisplay: '#eeeeee',
     font: '#fff',
     information: '#9e9e9e',
+  },
+  typography: {
+    fontFamily: {
+      main: "NotoSerifJP",
+    }
   },
 });
 
