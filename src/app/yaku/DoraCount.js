@@ -20,7 +20,11 @@ export default function DoraCount(props) {
       setDoraError(true);
       setHelperText('不正な値です。')
       return 1;
-    }
+  }else if( yakuList.some(item => item.includes('ドラ')) ){
+      setDoraError(true);
+      setHelperText('ドラは既に入力されています。')
+      return 1;
+  }
     setDoraError(false);
     setHelperText('OK');
     setHan(han + Number(dora));
