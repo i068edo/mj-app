@@ -47,7 +47,7 @@ export default function ButtonAppBar() {
 
             <Button onClick={resetButtonClick}>
               <Typography variant="h6" component="div" color='font' /* fontWeight='bold' */ sx={{fontFamily: "NotoSerifJP"}}>
-                まーじゃんけいさん麻雀計算
+                まーじゃんけいさん
               </Typography>
             </Button>
 
