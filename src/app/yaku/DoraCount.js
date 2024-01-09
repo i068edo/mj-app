@@ -46,7 +46,7 @@ export default function DoraCount(props) {
 
 
   return (
-    <Box display='flex' flexDirection='column' width='265px'>
+    <Box display='flex' flexDirection='column' width='260px'>
       
       <TextField id="ドラの数"
         label="ドラの数"
