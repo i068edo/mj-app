@@ -33,7 +33,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: {
-      main: "NotoSerifJP",
+      main: "NoteSerifJP",
     }
   },
 });
@@ -107,7 +107,7 @@ function ParentField(props) {
       }
       {visibleResultField &&
         <ResultField  {...{
-          oyaKo, tsumoRon, han, yakuList, totalPoint, isAll, yakuman, fu, naniman
+          oyaKo, tsumoRon, han, yakuList, totalPoint, isAll, yakuman, fu, naniman, yakuman
         }} />
       }
     </div>

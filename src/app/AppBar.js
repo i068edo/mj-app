@@ -12,7 +12,9 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { yellow, lime, green } from '@mui/material/colors';
 import QuestionModal from './QuestionModal';
 import InfoModal from './InfoModal';
+import { Noto_Serif_JP } from "next/font/google";
 
+const NotoSerifJP = Noto_Serif_JP({ weight: "300", subsets: ["latin"] });
 
 export default function ButtonAppBar() {
   const [questionModalOpen, setQuestionModalOpen] = useState(false);
@@ -44,8 +46,8 @@ export default function ButtonAppBar() {
             </IconButton>
 
             <Button onClick={resetButtonClick}>
-              <Typography variant="h6" component="div" color='font'>
-                まーじゃんけいさん
+              <Typography variant="h6" component="div" color='font' /* fontWeight='bold' */ sx={{fontFamily: "NotoSerifJP"}}>
+                まーじゃんけいさん麻雀計算
               </Typography>
             </Button>
 

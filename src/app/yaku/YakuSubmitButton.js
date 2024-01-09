@@ -65,10 +65,8 @@ export default function YakuSubmitButton(props) {
     }
 
     function calculateYakuman() {
-        basicPoint = 4000;
-        for (let i = 0; i < yakuman; i++) {
-            basicPoint *= 2;
-        }
+        basicPoint = 8000;
+        basicPoint *= yakuman;
         if (yakuman == 1) {
             setNaniman('役満');
         } else {

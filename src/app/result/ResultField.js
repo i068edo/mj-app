@@ -12,7 +12,7 @@ import { grey } from '@mui/material/colors';
 import Grid from '@mui/material/Grid';
 
 export default function ResultField(props) {
-    const { oyaKo, tsumoRon,  han, fu,  yakuList, totalPoint, isAll, naniman } = props;
+    const { oyaKo, tsumoRon,  han, fu,  yakuList, totalPoint, isAll, naniman, yakuman } = props;
 
     function backButtonClick() {
         window.location.reload();
@@ -32,6 +32,7 @@ export default function ResultField(props) {
                             {yakuList.map((yaku) => (<Typography gutterBottom variant="h6" sx={{ m: 1 }}>{yaku}</Typography>))}
                         </Box>
 
+                        {(yakuman == 0) &&
                         <div>
                             <Typography gutterBottom variant='subtitle1' color={grey[700]} sx={{ m: 1 }}>合計</Typography>
                             <Stack direction="row" alignItems='flex-end' spacing={2} sx={{ m: 1 }}>
@@ -39,6 +40,7 @@ export default function ResultField(props) {
                                 <Typography gutterBottom variant="h5">{fu} 符</Typography>
                             </Stack>
                         </div>
+                        }
 
                         <Box display='flex' flexDirection='column' sx={{ m: 1 }}>
                             <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' sx={{ ml: 3 }}>
