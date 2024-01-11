@@ -26,7 +26,7 @@ export default function YakuField(props) {
 
 
     return (
-        <Box sx={{ mt: 1, ml: 1 }}>
+        <Box sx={{ mt: 1, ml: 1, mr: 1 }}>
 
             <Box display='flex' gap='1rem'
                  sx={{
@@ -34,7 +34,7 @@ export default function YakuField(props) {
                     display: "block",
                 },
             }}>
-                <Box sx={{ mb: 3, ml: 1 }}>
+                <Box sx={{ mb: 3, ml: 1, mr: 1 }}>
                     <Typography variant="h5" component="div" color='primary' fontWeight='bold'>あがり方</Typography>
                     <Typography variant="body1" sx={{ mb: 3 }} color='information' >適当なものを選択しましょう。</Typography>
 
@@ -55,7 +55,7 @@ export default function YakuField(props) {
                     </Box>
                 </Box>
 
-                <Box sx={{ mb: 3, ml: 1 }}>
+                <Box sx={{ mb: 3, ml: 1, mr: 1 }}>
                     <Typography variant="h5" component="div" color='primary' fontWeight='bold'>ドラの数</Typography>
                     <Typography variant="body1" sx={{ mb: 1 }} color='information' >ドラの数を入力しましょう。</Typography>
                     <DoraCount {...{ han, setHan, yakuList, setYakuList, dora, setDora, }} />

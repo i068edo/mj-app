@@ -33,27 +33,26 @@ export default function ButtonAppBar() {
     });
   }
 
+
   return (
     <Box sx={{ flexGrow: 1, mb: 10 }} >
 
       <AppBar position='fixed' color='primary' enableColorOnDark >
-        <Box display='flex' justifyContent='space-between' sx={{ ml: 2, mr: 2 }}>
+        <Box display='flex' justifyContent='space-between' sx={{ ml: 2, mr: 2 }} maxHeight='51px'>
 
-          <div>
-
+          <Box>
             <IconButton onClick={handleOpenInfoModal}>
               <InfoOutlinedIcon fontSize="large" color='secondary' />
             </IconButton>
 
             <Button onClick={resetButtonClick}>
-              <Typography variant="h6" component="div" color='font' /* fontWeight='bold' */ sx={{fontFamily: "NotoSerifJP"}}>
+              <Typography variant="h6" component="div" color='font' /* fontWeight='bold' */>
                 まーじゃんけいさん
               </Typography>
             </Button>
+          </Box>
 
-          </div>
-
-          <IconButton onClick={handleOpenQuestionModal}>
+          <IconButton onClick={handleOpenQuestionModal} sx={{ textAlign: 'right' }}>
             <QuestionMarkRoundedIcon fontSize="large" color='secondary' />
           </IconButton>
 

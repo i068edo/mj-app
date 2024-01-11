@@ -1,8 +1,9 @@
 import React from 'react';
+import FuDetailsModule from "./FuDetails.module.css"; 
 
 export default function FuDetails() {
     return (
-        <details>
+        <details className={FuDetailsModule.details}>
             <summary>詳しい符計算について</summary>
             <p>
                 基本符20符に、ツモの2符、
