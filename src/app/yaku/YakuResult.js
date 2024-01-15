@@ -21,7 +21,7 @@ export default function YakuResult( props ) {
                 display: 'flex',
                 flex: 1,
                 height: '4rem',
-                overflow: 'scroll' 
+                overflow: 'auto' 
             }}>
                 {yakuList}
             </Box>
