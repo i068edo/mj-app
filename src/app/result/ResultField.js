@@ -37,7 +37,9 @@ export default function ResultField(props) {
                             <Typography gutterBottom variant='subtitle1' color={grey[700]} sx={{ m: 1 }}>合計</Typography>
                             <Stack direction="row" alignItems='flex-end' spacing={2} sx={{ m: 1 }}>
                                 <Typography gutterBottom variant="h3">{han} 飜</Typography>
-                                <Typography gutterBottom variant="h5">{fu} 符</Typography>
+                                { !(fu == null) &&
+                                    <Typography gutterBottom variant="h5">{fu} 符</Typography>
+                                }
                             </Stack>
                         </div>
                         }
