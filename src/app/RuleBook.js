@@ -191,7 +191,7 @@ function RuleBook() {
 
       <p>
         <strong style={{ color: '#0000FF' }}>大三元（ダイサンゲン）</strong><br />
-        <img src="https://gigaplus.makeshop.jp/mahjong/image/pai/daisangen.gif" alt="ダイサンゲン" /><br />
+        <img src="yaku_images/daisangen.jpg" alt="ダイサンゲン" /><br />
         白・発・中の三元牌を３つ刻子にしたあがり。
       </p><br />
 
